@@ -28,7 +28,7 @@
 \DeclareOption{inggris}{\@langindofalse\@langengtrue}
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
-\ExecuteOptions{skripsi,satusetengahspasi,indonesia}
+\ExecuteOptions{proposal,satusetengahspasi,indonesia}
 \ProcessOptions
 \LoadClass[a4paper,12pt]{report}
 \RequirePackage{natbib}
@@ -79,7 +79,7 @@
 \renewcommand \thesection {\@arabic\c@chapter.\@arabic\c@section}
 %\renewcommand\thesubsection {\@alph\c@subsection.}
 \renewcommand\thesubsection {\@arabic\c@chapter.\@arabic\c@section.\@arabic\c@subsection}
-%\renewcommand\thesubsubsection{\@roman\c@subsubsection.}
+\renewcommand\thesubsubsection{\@arabic\c@chapter.\@arabic\c@section.\@arabic\c@subsection.\@arabic\c@subsubsection}
 %\renewcommand\thesubsubsection{}
 \renewcommand\appendix{\par
   \setcounter{chapter}{0}%

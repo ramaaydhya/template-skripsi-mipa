@@ -1,7 +1,14 @@
-Agar penelitian lebih terfokus, beberapa batasan yang diterapkan adalah:
+Supaya penelitian lebih terfokus, terdapat beberapa batasan yang diterapkan:
 
 \begin{enumerate}
-  \item Penelitian hanya akan menguji beban CPU sebagai parameter utama \textit{load balancing}. 
-  \item Implementasi dilakukan dalam lingkungan simulasi berbasis VPS untuk meniru kondisi \textit{cloud computing}. 
-  \item Evaluasi difokuskan pada performa kombinasi GP-ACO dibandingkan dengan GEP-GA dalam metrik seperti waktu respon efisiensi migrasi.
+  \item \textbf{Evaluasi melalui Simulasi} \\
+  Kinerja algoritma dievaluasi melalui simulasi menggunakan CloudSim Plus. Oleh karena itu, performa algoritma dalam lingkungan nyata yang lebih dinamis dapat berbeda dengan hasil simulasi.
+  \item \textbf{Asumsi Lingkungan Statis} \\
+  Penelitian ini mengasumsikan lingkungan \textit{cloud} bersifat statis, di mana semua parameter permasalahan, seperti jumlah VM dan PM, kebutuhan sumber daya dari VM, kapasitas PM, serta karakteristik jaringan, tidak mengalami perubahan selama simulasi berlangsung. Dengan demikian, algoritma yang dikembangkan bersifat \textit{offline} dan tidak menangani perubahan dinamis, seperti kedatangan atau penghentian VM secara \textit{real-time}.
+  \item \textbf{Komunikasi Antar-VM dalam PM yang Sama} \\
+  Jika dua VM ditempatkan pada PM yang sama, komunikasi antar-VM dilakukan melalui \textit{memory sharing} tanpa memanfaatkan jaringan tambahan. Kebutuhan memori yang dialokasikan untuk setiap VM diasumsikan sudah mencakup kebutuhan tambahan untuk \textit{memory sharing}.
+  \item \textbf{Penggunaan \textit{Software Defined Network} (SDN) pada \textit{Data Center}} \\
+  Penelitian ini mengasumsikan bahwa informasi mengenai topologi jaringan \textit{data center} tersedia bagi pembuat keputusan, termasuk struktur topologi, kapasitas setiap \textit{link}, dan kecepatan transmisinya.	Dengan adanya SDN, jalur komunikasi antar-VM dapat ditentukan berdasarkan informasi tersebut.
+  \item \textbf{Penggunaan Banyak Jalur untuk Setiap Komunikasi} \\
+  Setiap komunikasi antar-VM dapat menggunakan lebih dari satu jalur secara bersamaan (\textit{multipath routing}). Hal ini didukung oleh protokol seperti \textit{Multipath Transmission Control Protocol} (MP-TCP) yang memungkinkan distribusi lalu lintas melalui beberapa jalur dalam jaringan.
 \end{enumerate}

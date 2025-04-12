@@ -1,8 +1,40 @@
-Metode penelitian yang digunakan adalah sebagai berikut:
+Penelitian ini dilakukan melalui beberapa tahapan sebagai berikut:
 
 \begin{enumerate}
-  \item \textbf{Studi Literatur}: Mengkaji teori terkait \textif{load balancing}. 
-  \item \textbf{Pengembangan Algoritma}: Membangun algoritma kombinasi GP-ACO dan mengintegrasikannya dalam lingkungan \textit{cloud}. 
-  \item \textbf{Implementasi dan Pengujian}: Menguji performa algoritma GP-ACO dan membandingkannya dengan GEP-GA. 
-  \item \textbf{Analisis dan Evaluasi}: Menganalisis hasil eksperimen dan memberikan rekomendasi untuk pengembangan lebih lanjut.
+  \item \textbf{Studi Literatur} \\
+    Tahap ini mencakup kajian terhadap penelitian terdahulu yang berkaitan dengan penempatan VM, pemilihan rute komunikasi antar-VM, serta metode optimasi multiobjektif berbasis algoritma evolusioner. Literatur yang dikaji mencakup buku, jurnal ilmiah, serta publikasi konferensi yang relevan. Selain itu, studi juga dilakukan terhadap teknologi yang digunakan, seperti NSGA-III sebagai algoritma optimasi, CloudSim Plus untuk simulasi, dan DOCPLEX sebagai \textit{LP solver}.
+    
+  \item \textbf{Perancangan Algoritma Penempatan VM dan Lingkungan Simulasi} \\
+    Pada tahap ini, dilakukan perancangan model optimasi multiobjektif yang mencakup:
+    \begin{enumerate}
+     \item Formulasi masalah optimasi dalam bentuk fungsi objektif dan kendala.
+        
+     \item Pemilihan metode representasi kromosom untuk solusi penempatan VM dan pemilihan rute komunikasi.
+        
+     \item Perancangan operator algoritma genetika untuk NSGA-III, termasuk crossover, mutasi, dan mekanisme perbaikan.
+        
+     \item Penentuan skenario simulasi, seperti topologi jaringan, konfigurasi VM dan PM, serta parameter simulasi lainnya.
+    \end{enumerate}    
+  \item \textbf{Implementasi Algoritma} \\
+    Tahap ini mencakup implementasi algoritma NSGAIII dalam lingkungan simulasi CloudSim Plus. Implementasi meliputi:
+    \begin{enumerate}
+     \item Implementasi algoritma NSGA-III ke dalam program Java.
+        
+     \item Integrasi algoritma NSGA-III dengan CloudSim Plus untuk menilai performa solusi yang dihasilkan.
+        
+     \item Pengujian awal untuk memastikan algoritma berjalan sesuai dengan perancangan.
+    \end{enumerate}        
+  \item \textbf{Pengujian Algoritma pada Lingkungan Simulasi dan Evaluasi Kinerja} \\
+    Algoritma yang telah diimplementasikan diuji pada berbagai skenario simulasi dengan variasi parameter, seperti:
+    \begin{enumerate}
+     \item Topologi jaringan yang berbeda (misalnya, FatTree, BCube, DCell).
+        
+     \item Jumlah VM dan PM yang bervariasi.
+    
+     \item Kebutuhan sumber daya setiap VM dan kapasitas sumber daya di setiap PM yang bervariasi.
+    \end{enumerate}      
+    Evaluasi kinerja dilakukan dengan membandingkan kualitas solusi Pareto yang dihasilkan, efisiensi komputasi algoritma, serta stabilitas hasil dalam berbagai skenario.
+        
+\item \textbf{Penulisan Laporan} \\
+    Hasil penelitian yang mencakup formulasi masalah, perancangan algoritma, hasil eksperimen, dan analisis kinerja algoritma didokumentasikan dalam bentuk skripsi.
 \end{enumerate}
