@@ -1,0 +1,106 @@
+Untuk mempermudah pembahasan, fungsi (O2) dapat dinyatakan sebagai berikut:
+\begin{equation*}
+\sum_{j=1}^{N_P}y_j\cdot\frac{\left|\sum_{i=1}^{N_V}A_{ij}x_{ij}\right|+C_{j}}{\sum_{i=1}^{N_V}B_{ij}x_{ij}}
+\end{equation*}
+di mana
+\begin{itemize} 
+  \item{$A_{ij}=v_i^\text{cpu}p_j^\text{mem}-v_i^\text{mem}p_j^\text{cpu}$,}
+  \item{$B_{ij}=v_i^\text{cpu}p_j^\text{mem}+v_i^\text{mem}p_j^\text{cpu}$, dan}
+  \item{$C_j=p_j^\text{cpu}p_j^\text{mem}\epsilon$}
+\end{itemize}
+
+Karena kebutuhan sumber daya setiap VM dan kapasitas sumber daya di setiap PM diasumsikan selalu tetap, $A_{ij}$, $B_{ij}$, dan $C_{j}$ dianggap sebagai konstanta.
+
+\paragraph{Menghilangkan Nilai Mutlak}
+ Definisikan $N_P$ buah variabel keputusan bantu $z_{j}=\left|\sum_{i=1}^{N_V}A_{ij}x_{ij}\right|$. Kemudian, tambahkan pula kendala-kendala baru untuk $z_j$ ke dalam model multiobjektif di atas. Dengan demikian, diperoleh model baru sebagai berikut:
+
+
+\begin{longtblr}{rll}
+{Minimalkan} & 
+$\displaystyle \sum_{j=1}^{N_P}\frac{z_{j} \cdot y_j+C_j \cdot y_j}{\sum_{i=1}^{N_V}B_{ij}\cdot x_{ij}}$ 
+& (O2a)
+\\
+
+dengan syarat & 
+$z_{j} \geq \sum_{i=1}^{N_V}A_{ij} \cdot x_{ij}$ 
+& (Z1) 
+
+\\
+
+& $z_{j} \geq -\sum_{i=1}^{N_V}A_{ij}\cdot x_{ij}$ 
+& (Z2)
+
+\\
+\end{longtblr}
+
+
+
+\paragraph{Menghilangkan Perkalian Antar Variabel Keputusan}
+Perhatikan bahwa pada pembilang fungsi objektif (O2a), terdapat perkalian dua variabel keputusan $z_{j}$ dan $y_j$. Hal ini menyebabkan pembilang tersebut tidak bersifat linier. Linierisasi dapat dilakukan dengan mendefinisikan $N_P$ buah variabel keputusan bantu $\alpha_{j}=z_{j}y_{j}$ dan ditambahkan pula kendala-kendala baru untuk ke dalam model di atas menggunakan metode linierisasi. Dengan demikian, diperoleh model baru sebagai berikut:
+
+\begin{longtblr}{rll}
+Minimalkan & 
+$\displaystyle \sum_{j=1}^{N_P}\frac{\alpha_j+C_j \cdot y_j}{\sum_{i=1}^{N_V}B_{ij}\cdot x_{ij}}$ 
+& (O2b)
+
+\\
+
+dengan syarat & 
+$z_j \geq \sum_{i=1}^{N_V}A_{ij} \cdot x_{ij}$ 
+& (Z1)
+
+\\
+
+& $z_j \geq -\sum_{i=1}^{N_V}A_{ij}\cdot x_{ij}$ 
+& (Z2)
+
+\\
+
+& $\alpha_j \leq My_j$ & (A1) \\
+& $\alpha_j \leq z_j$ & (A2) \\
+& $\alpha_j \geq z_j-M(1-y_j)$ & (A3) \\
+& $\alpha_j \geq 0$ & (A4) \\
+\end{longtblr}
+
+
+\paragraph{Menghilangkan Pecahan}
+Definisikan $N_P$ buah variabel keputusan bantu $\beta_j=\frac{\alpha_j+C_j \cdot y_j}{\sum_{i=1}^{N_V}B_{ij}\cdot x_{ij}}$. Dengan menyubstitusi pecahan pada (O2b) dengan $\beta_j$, diperoleh model baru berikut
+
+\begin{longtblr}{rlll}
+Minimalkan &
+$\displaystyle \sum_{j=1}^{N_P} \beta_j$ 
+& (O2c)
+\\
+dengan syarat &
+$\beta_j\cdot(\sum_{i=1}^{N_V}B_{ij}\cdot x_{ij})=\alpha_j+C_j\cdot y_j $
+& (B1)
+
+\\
+
+& $z_j \geq \sum_{i=1}^{N_V}A_{ij} \cdot x_{ij}$ & (Z1) \\
+& $z_j \geq -\sum_{i=1}^{N_V}A_{ij}\cdot x_{ij}$ & (Z2) \\
+& $\alpha_j \leq My_j$ & (A1) \\
+& $\alpha_j \leq z_j$ & (A2) \\
+& $\alpha_j \geq z_j-M(1-y_j)$ & (A3) \\
+& $\alpha_j \geq 0$ & (A4) \\
+\end{longtblr}
+
+
+Perhatikan bahwa terdapat perkalian variabel keputusan $\beta_j$ dengan $x_{ij}$ pada kendala (B1). Linierisasi dapat diaplikasikan terhadap kendala (B1) untuk menghilangkan perkalian tersebut. Hal ini dilakukan dengan mendefinisikan $N_V\cdot N_P$ buah variabel keputusan bantu $\gamma_{ij}=x_{ij}\beta_j$ dan mengubah model di atas menjadi model berikut :
+
+\begin{longtblr}{rlll}
+Minimalkan & $\displaystyle \sum_{j=1}^{N_P} \beta_j$ & (O2c)
+\\
+dengan syarat & $\sum_{i=1}^{N_V}B_{ij}\cdot \gamma_{ij}=\alpha_j+C_j\cdot y_j$ & (G1)\\
+& $\gamma_{ij} \leq Mx_{ij}$ & (G2)\\
+& $\gamma_{ij} \leq \beta_{j}$ & (G3)\\
+& $\gamma_{ij} \geq \beta_j - M(1-x_{ij})$ & (G4)\\
+& $\gamma_{ij} \geq 0$ & (G5)\\
+& $z_j \geq \sum_{i=1}^{N_V}A_{ij} \cdot x_{ij}$ & (Z1) \\
+& $z_j \geq -\sum_{i=1}^{N_V}A_{ij}\cdot x_{ij}$ & (Z2)\\
+& $\alpha_j \leq My_j$ & (A1) \\
+& $\alpha_j \leq z_j$ & (A2) \\
+& $\alpha_j \geq z_j-M(1-y_j)$ & (A3) \\
+& $\alpha_j \geq 0$ & (A4) \\
+\end{longtblr}
+

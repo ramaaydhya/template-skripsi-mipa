@@ -1,0 +1,20 @@
+Secara matematis, masalah penentuan rute dapat dinyatakan sebagai masalah optimasi multiobjektif berikut:
+\begin{longtblr}{rll}
+Maksimalkan &\text{BW}_\text{sum} & (O3)\\
+Minimalkan & \text{D}_\text{mean} & (O4)\\
+dengan syarat & b_r \geq \displaystyle \frac{x_r}{M} & (N1) & \text{untuk setiap $p_i,p_j \in P$ dan $r \in \mathcal{R}^*(p_i,p_j)$} \\
+	& b_r \leq x_r \cdot b_\text{PM}(p_i,p_j) & (N2) & \text{untuk setiap $p_i,p_j \in P$ dan $r \in \mathcal{R}^*(p_i,p_j)$}\\
+&\displaystyle \sum_{r\in\mathcal{R}^*(p_i,p_j)} x_r \leq k & (N3) & untuk setiap $p_i,p_j \in P$\\
+&\displaystyle \sum_{(p_i,p_j) \in P \times P}\ \sum_{{r\in\mathcal{R}^*(p_i,p_j) \ :\ l\in\text{range}(r)}} b_r \leq c_l & (N4) & \text{untuk setiap $p_i,p_j \in P$ dan $l \in \mathcal{L}$} \\
+& b_r \in \mathbb{R} & (N5) & \text{untuk setiap $p_i,p_j \in P$ dan $r \in \mathcal{R}^*(p_i,p_j)$} \\
+& x_r \in \{0,1\} & (N6) & \text{untuk setiap $p_i,p_j \in P$ dan $r \in \mathcal{R}^*(p_i,p_j)$}
+\end{longtblr}
+Model di atas mempertimbangkan dua objektif, yaitu memaksimalkan alokasi \textit{bandwidth} (O3),  serta meminimalkan \textit{delay} rata-rata di antara semua komunikasi (O4). 
+
+Batasan (N1) memastikan bahwa setiap PM tidak mengirimkan data dalam jumlah negatif. Batasan (N2) membatasi data yang dikirim antara pasangan PM supaya tidak melebihi permintaan alokasi \textit{bandwidth}. Batasan (N3) memastikan bahwa data hanya dapat ditransmisikan melalui maksimal $k$ rute. Batasan ini menggunakan variabel indikator $x_r$, yang bernilai $1$ jika rute $r$ digunakan untuk berkomunikasi dan $0$ jika tidak, sebagaimana tercantum dalam batasan (N6). Batasan (N4) memastikan bahwa total \textit{bandwidth} yang digunakan untuk transmisi data melalui suatu \textit{link} tidak melebihi kapasitasnya. Terakhir, batasan (N6) menjamin bahwa \textit{bandwidth} yang dialokasikan untuk setiap rute bernilai bilangan riil.
+
+Model di atas menggunakan $b_r(p_i,p_j)$ dan $x_r$ sebagai variabel keputusan, untuk setiap $p_i,p_j \in P$ dan $r \in \mathcal{R}^*(p_i,p_j)$. Dengan demikian, jumlah variabel keputusan dalam model ini adalah $O(|P|^2R)$, dengan $R$ merupakan total rute yang ada di dalam jaringan. 
+
+Namun, karena tidak semua pasangan PM saling berkomunikasi, semua variabel $b_r(p_i,p_j)$ dapat diberi nilai 0 untuk setiap rute $r$ dari $p_i$ ke $p_j$ jika $p_i$ tidak berkomunikasi dengan $p_j$. Hal in dapat mengurangi jumlah variabel keputusan secara signifikan. 
+
+Selain itu, dalam implementasi pencarian solusi menggunakan algoritma genetika, hanya $k$ rute dengan akumulasi \textit{delay} terkecil yang dipertimbangkan sebagai variabel keputusan. Rute-rute ini  ditentukan sebelum algoritma berjalan menggunakan strategi khusus yang sesuai topologi jaringan yang hendak dioptimalkan. Apalagi tidak memiliki strategi khusus, pengambil keputusan dapat menggunakan strategi yang lebih umum. Sebagai contoh, pengambil keputusan dapat memilih $k$ rute dengan \textit{delay} terkecil menggunakan algoritma \textit{k-shortest path} (KSP), seperti algoritma Yen. 

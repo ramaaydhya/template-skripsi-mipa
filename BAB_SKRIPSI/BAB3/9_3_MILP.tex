@@ -1,0 +1,31 @@
+Meskipun LP dapat menggunakan lebih dari satu objektif, LP \textit{solver} tidak bisa digunakan untuk menyelesaikan masalah multiobjektif. Oleh karena itu, solusi optimal Pareto dapat dicari menggunakan metode penjumlahan berbobot (\textit{weighted sum}), seperti yang telah dibahas pada subbab Masalah Optimasi Multiobjektif.
+
+Karena model yang dirumuskan di awal masih mengombinasikan masalah maksimalisasi dengan minimalisasi, setiap objektif harus diseragamkan. Mengingat bahwa $\max -f=-\min f$ dan $\operatorname{argmax}-f=\operatorname{argmin}f$, solusi optimal dapat diperoleh dengan mengubah semua masalah minimalisasi menjadi masalah maksimalisasi. 
+
+Dengan demikian, dalam perumusan MILP ini, objektif (O1) dan (O2) diubah menjadi masalah maksimalisasi $-\text{PC}_\text{sum}$ dan $-\text{RW}_\text{sum}$. Akan tetapi, keoptimalan solusi tetap dihitung menggunakan objektif asli, yaitu $\text{PC}_\text{sum}$ dan $\text{RW}_\text{sum}$.
+
+Berikut formulasi MILP untuk masalah multiobjektif penempatan VM dan penentuan rute
+
+\begin{longtblr}{rlll}
+\text{Maksimalkan} &  w_1\cdot(-\text{PC}_\text{sum}) +w_2\cdot(-\text{RW}_\text{sum}) + w_3\cdot \text{BW}_\text{sum} + w_4\cdot F & \text{(O)}\\
+\\
+\text{dengan syarat}
+		& \text{PC}_\text{sum} = \displaystyle \sum_{j=1}^{N_P}\sum_{i=1}^{N_V}P_{ij}w_{ij}+\text{PC}_j^\text{idle}\\
+		& \text{RW}_\text{sum} = \displaystyle \sum_{j=1}^{N_P} \beta_j\\
+		& \text{BW}_\text{sum} = \displaystyle \sum\sum b_r\\
+		& F = A(\mathbf{b},\mathbf{x})-q_kB(\mathbf{b},\mathbf{x})\\
+		& A(\mathbf{b},\mathbf{x}) = \displaystyle \sum\sum x_r\\
+		& B(\mathbf{b},\mathbf{x}) = \displaystyle \sum\sum \Delta_r\cdot b_r\\
+\\		
+		& \text{(V1)-(V4)} \\
+		& \text{(V5a)-(V5b)} \\
+		& \text{(N1)-(N6)} \\
+		& \text{(W1)-(W3)} \\
+		& \text{(G1)-(G5)} \\
+		& \text{(Z1)-(Z2)} \\
+		& \text{(A1)-(A4)} \\
+\end{longtblr}		
+
+MILP ini menggunakan beberapa variabel keputusan: $x_{ij}, y_j, x_r, w_{ij}$ sebagai variabel keputusan biner, dan $b_r,\gamma_{ij},z_j,\alpha_j$ sebagai variabel keputusan kontinu nonnegatif. 
+
+Seperti yang dibahas pada bagian mengenai konversi objektif (O4) melalui algoritma Dinkelbach, MILP ini akan diselesaikan oleh *solver* berkali-kali menggunakan nilai $q_k$ yang berbeda hingga $\max_{\mathbf{b},\mathbf{x}} F(q_k) = 0$. 

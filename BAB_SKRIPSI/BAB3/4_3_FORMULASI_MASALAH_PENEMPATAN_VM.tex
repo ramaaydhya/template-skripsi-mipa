@@ -1,0 +1,36 @@
+Berdasarkan deskripsi masalah di atas, masalah penempatan VM dapat dinyatakan secara matematis secara berikut:
+\begin{longtblr}{rlll}
+Minimalkan & \text{PC}_\text{sum} & (O1)\\ 
+Minimalkan & \text{RW}_\text{sum} & (O2)\\
+dengan syarat  
+		&
+		\displaystyle\sum_{j=1}^{N_P} x_{ij} = 1 
+		&(V1) 
+		&i = 1, 2, \dots, N_V\\
+		& 
+		\displaystyle\sum_{i=1}^{N_V} v_{i}^\text{cpu}x_{ij} \leq p_i^\text{cpu} 
+		&(V2) 
+		&j=1,2,\dots,N_P \\
+		&
+		\displaystyle\sum_{i=1}^{N_V} v_{i}^\text{mem}x_{ij} \leq p_i^\text{mem} 
+		&(V3) 
+		&j=1,2,\dots,N_P \\
+		& 
+		x_{ij} \in \{0,1\}
+		&(V4) 
+		&i = 1, 2, \dots, N_V \\
+		& 
+		y_j =
+			\begin{cases}
+			0 & \text{, jika }\displaystyle \sum_{i=1}^{N_V} x_{ij} = 0 \\
+			1 & \text{, jika }\displaystyle \sum_{i=1}^{N_V} x_{ij} > 0 \\
+			\end{cases}
+		&(V5) 
+		&j = 1, 2, \dots, N_P \\
+\end{longtblr}
+
+Model di atas mempertimbangkan dua objektif, yaitu meminimalkan total konsumsi energi seluruh PM (O1), serta meminimalkan total pemborosan sumber daya oleh seluruh PM (O2). Kedua objektif didefinisikan menggunakan variabel $y_j$ pada batasan (V5) untuk memastikan bahwa total dihitung hanya menggunakan PM yang aktif.
+
+Batasan (V1) memastikan bahwa setiap VM ditempatkan pada satu PM saja. Batasan (V2) dan (V3) memastikan bahwa total CPU dan memori yang digunakan oleh semua VM yang ditempatkan pada suatu PM tidak melebihi kapasitas CPU dan memori yang dimiliki PM tersebut. Ketiga batasan tersebut menggunakan variabel indikator $x_{ij}$ pada batasan (V4) yang bernilai $1$ jika $\pi(v_i)=p_j$ dan bernilai $0$ jika sebaliknya . Terakhir, batasan (V5) memastikan bahwa PM diaktifkan jika dan hanya terdapat paling tidak satu VM yang dipetakan kepada PM tersebut. 
+
+Model di atas menggunakan $x_{ij}$  sebagai variabel keputusan, untuk setiap $i=1,\dots,N_V$ dan $j=1,\dots,N_P$. Dengan demikian, jumlah variabel keputusan dalam model ini adalah $N_P\cdot N_V$  

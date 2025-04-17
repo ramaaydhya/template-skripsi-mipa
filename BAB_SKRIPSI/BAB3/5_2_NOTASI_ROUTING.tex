@@ -1,0 +1,60 @@
+Misalkan $\mathcal{G}=(\mathcal{N},\mathcal{L})$ adalah graf berarah tanpa \textit{loop} yang mewakili topologi jaringan \textit{data center}, di mana $\mathcal{N}$ dan $\mathcal{L}$ masing-masing merupakan himpunan \textit{node} dan \textit{link}. $\mathcal{N}$ mencakup semua mesin fisik dalam himpunan $P$ beserta perangkat jaringan. Setiap link $l = (u,v) \in \mathcal{L}$, menghubungkan dua \textit{node} $u, v \in \mathcal{N}$, dengan $u$ sebagai \textit{node} asal dan $v$ sebagai \textit{node} tujuan. Kapasitas dan \textit{delay} \textit{link} $l \in \mathcal{L}$ masing-masing diberi notasi $c_l \in \mathbb{N}$ dan $\delta_l \in \mathbb{N}$.
+
+Misalkan $b_\text{VM}(v_i,v_j) \in \mathbb{N}$ adalah besar \textit{bandwidth} yang diminta untuk komunikasi antara VM $v_i \in V$ dan $v_j \in V$ dan $b_\text{PM}(p_i,p_j) \in \mathbb{N}$ adalah besar \textit{bandwidth} yang dialokasikan untuk komunikasi antara  PM $p_i \in P$ dan $p_j \in P$. Maka, $b_\text{PM}(p_i,p_j)$ didefinisikan sebagai 
+
+\begin{equation*}
+  b_{PM}(p_i,p_j) = 
+  \begin{cases}
+    0 
+    & \text{, jika }p_i = p_j \\
+    \displaystyle \sum_{\substack{(v_i,v_j)\in V \times V \\ \pi(v_i)=p_i\ \wedge\ \pi(v_j)=p_j}} b_\text{VM}(v_i,v_j) 
+    & \text{, jika }p_i \neq p_j\\
+  \end{cases}
+\end{equation*}
+
+Rute dari \textit{node} $u \in \mathcal{N}$ ke \textit{node} $v \in \mathcal{N}$ didefinisikan sebagai barisan \textit{link} \begin{equation*}r = (l_1,l_2,\dots, l_n)\end{equation*}, di mana
+\begin{itemize}
+  \item{$l_i = (u_{i-1},u_i) \in \mathcal{L}$, untuk $i = 1,2,\dots,n$},
+  \item{$u_0=u$ adalah \textit{node} asal, sedangkan $u_n=v$ adalah \textit{node} tujuan}, 
+  \item{tidak ada \textit{node} yang berulang dalam rute, yaitu $u_i \neq u_j$ untuk setiap $i \neq j$}
+  \item{panjang rute adalah jumlah \textit{link}-nya, yaitu $n$}
+\end{itemize}
+
+Misalkan $\mathcal{R}^*(p',p'')$ adalah himpunan semua rute dari PM $p' \in P$ ke PM $p'' \in P$ yang ada dalam jaringan $\mathcal{G}$, dengan $k' = |\mathcal{R}^*(p',p'')|$. Karena komunikasi antara $p'$ dan $p''$ dilakukan melalui paling banyak $k$ buah rute, maka hanya $k'' \leq k$ rute yang benar-benar digunakan.  
+
+Untuk setiap rute $r \in \mathcal{R}^*(p',p'')$ misalkan $b_r$ adalah besar \textit{bandwidth} yang dialokasikan pada rute tersebut, dengan ketentuan:
+
+\begin{equation*}
+  b_r = 
+  \begin{cases} 
+    \text{nilai positif}, & \text{jika } r \text{ termasuk dalam rute yang digunakan} \\
+     0, & \text{jika } r \text{ tidak digunakan}. 
+  \end{cases}
+\end{equation*}​
+
+Oleh karena itu, total \textit{bandwidth} yang dialokasikan untuk komunikasi antara $p'$ dan $p''$ adalah: 
+
+\begin{equation*}
+  b_\text{PM}(p',p'')=\sum_{r \in \mathcal{R}^*(p',p'')} b_{r}
+\end{equation*}
+
+Definsikan akumulasi \textit{delay} rute $r$ sebagai
+
+\begin{equation*}
+  \Delta_r = \sum_{l \in \text{range}(r)}\delta_l
+\end{equation*}
+, di mana $\text{range}(r)$ adalah himpunan semua \textit{link} yang digunakan pada rute $r$.
+Terdapat dua objektif yang hendak dioptimalkan dalam masalah ini, yaitu memaksimalkan total alokasi \textit{bandwidth} dalam jaringan dan meminimalkan rata-rata \textit{delay} antara semua rute yang terpakai. Total alokasi \textit{bandwidth} dapat didefinisikan sebagai:
+
+\begin{equation*}
+\text{BW}_\text{sum}:=\displaystyle \sum_{(p_i,p_j) \in P\times P} \ \sum_{r\in\mathcal{R}^*(p_i,p_j)} b_r
+\end{equation*}
+, sedangkan rata-rata \textit{delay} dapat didefinisikan sebagai:
+
+\begin{equation*}
+\text{D}_\text{mean}:=\frac{\displaystyle \sum_{(p_i,p_j) \in P \times P} \ \sum_{r\in\mathcal{R}^*(p_i,p_j)} \Delta_r\cdot b_r}{\displaystyle \sum_{(p_i,p_j) \in P \times P}\ \sum_{r\in\mathcal{R}^*(p_i,p_j)}[b_r>0]}
+\end{equation*}
+
+$\Delta_r\cdot b_r(p_i,p_j)$ menyatakan delay yang dialami untuk mentransmisikan data sebesar $b_r(p_i,p_j)$ dari PM $p_i$ ke PM $p_j$ melalui rute $r$. Dengan demikian, pembilang pada definisi $\text{D}_\text{mean}$ di atas menyatakan total \textit{delay} yang dialami oleh setiap komunikasi. 
+
+Notasi $[P]$ adalah notasi kurung Iverson yang melambangkan nilai kebenaran pernyataan $P$, di mana $[P]=1$ apabila $P$ benar dan $[P]=0$ apabila $P$ salah. Dengan demikian, penyebut pada definisi $\text{D}_\text{mean}$ menyatakan jumlah rute yang dipakai. 

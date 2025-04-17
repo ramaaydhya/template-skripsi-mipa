@@ -1,0 +1,11 @@
+Sebuah \textit{cloud data center} memiliki sejumlah PM (\textit{physical machine} atau mesin fisik) dengan kapasitas sumber daya yang berbeda, terutama CPU dan memori. Sejumlah VM (\textit{virtual machine} atau mesin virtual) dengan kebutuhan sumber daya yang bervariasi dipesan oleh pengguna layanan \textit{cloud}. Setiap VM hanya dapat ditempatkan pada satu PM, sementara satu PM dapat menjalankan lebih dari satu VM. Setiap VM ditempatkan dengan memperhatikan kapasitas sumber daya yang tersisa di setiap PM. 
+
+Karena konsumsi energi sebuah PM berbanding lurus dengan penggunaan CPU-nya (Beloglazov, Abawajy & Buyya, 2012), penempatan VM harus dioptimalkan supaya total konsumsi energi seluruh PM dalam \textit{data center} menjadi seminimal mungkin.
+
+Sisa sumber daya yang tersedia pada setiap PM dapat sangat bervariasi tergantung pada solusi penempatan VM yang dipilih. Untuk memaksimalkan pemanfaatan sumber daya, metrik yang dikembangkan oleh Gao, dkk. (2013)  digunakan untuk menghitung potensi biaya pemborosan sumber daya. Penempatan VM kemudian ditentukan untuk meminimalkan pemborosan berdasarkan metrik ini. 
+
+Dengan demikian, minimalisasi konsumsi energi serta pemborosan sumber daya menjadi objektif utama dalam model optimasi penempatan VM pada penelitian ini.
+
+Masalah penempatan VM dapat dipandang sebagai perluasan masalah \textit{bin packing}. Dalam masalah \textit{bin packing} klasik, sejumlah objek dengan ukuran tertentu harus ditempatkan ke dalam wadah (\textit{bin}) berkapasitas terbatas, dengan tujuan meminimalkan jumlah wadah yang digunakan. Pada \textit{bin packing} standar, semua wadah memiliki kapasitas yang sama dan setiap objek hanya memiliki satu ukuran. Namun, dalam konteks penempatan VM, setiap VM dan PM memiliki dua dimensi utama: CPU dan memori. Selain itu, setiap PM memiliki kapasitas yang bervariasi. Oleh karena itu, masalah penempatan VM merupakan salah bentuk \textit{Vector Bin Packing Problem} (VBPP). 
+
+Masalah \textit{bin packing} diketahui memiliki kompleksitas \textit{NP-complete}. Karena masalah penempatan VM dimodelkan sebagai VBPP, masalah penempatan VM juga termasuk dalam kelas masalah \textit{NP-complete} (Fatima dkk., 2018). 

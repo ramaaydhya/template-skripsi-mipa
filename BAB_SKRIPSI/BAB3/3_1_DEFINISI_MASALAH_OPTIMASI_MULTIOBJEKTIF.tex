@@ -1,0 +1,31 @@
+Masalah optimasi multiobjektif merupakan masalah matematika yang melibatkan lebih dari satu fungsi yang disebut dengan fungsi objektif, di mana tujuan utamanya adalah mencari solusi dari himpunan tertentu yang dapat meminimalkan atau memaksimalkan beberapa fungsi objektif secara bersamaan. 
+
+Diberikan vektor fungsi objektif $\mathbf{f} = [f_1 , f_2 , \cdots , f_m]$ yang terdiri dari $m$ fungsi objektif, yaitu $f_1, f_2, \cdots, f_m$, dengan $\mathbf{f}:\mathbb{R}^n \rightarrow \mathbb{R}^m$. Untuk setiap $i = 1,2,\cdots,m$, fungsi objektif $f_i$ memetakan vektor keputusan atau solusi $\mathbf{x}$ ke nilai objektif dalam $\mathbb{R}$.
+
+Secara umum, masalah optimasi multiobjektif dapat dinyatakan sebagai berikut :
+\[
+\max_{\mathbf{x} \in S} \mathbf{f}(\mathbf{x})
+\]
+
+Di sini,  $\mathbf{f}(\mathbf{x}) = [f_1(\mathbf{x}), f_2(\mathbf{x}), \dots,f_m(\mathbf{x})]$ merupakan vektor nilai objektif dari $\mathbf{x}$, di mana elemen ke-$i$ menyatakan nilai fungsi objektif $f_i(\mathbf{x})$, untuk setiap $i = 1, 2, \dots, m$. Jika hanya terdapat satu fungsi objektif ($m=1$), maka masalah ini menjadi masalah optimasi berobjektif tunggal. Sebaliknya, jika $m \geq 2$, masalah ini disebut sebagai masalah optimasi multiobjektif.
+
+Perlu dicatat bahwa tidak semua masalah optimasi multiobjektif melibatkan maksimalisasi seluruh fungsi dalam vektor objektif. Dalam beberapa kasus, masalah ini dapat dirumuskan sebagai pencarian solusi yang meminimalkan nilai satu atau lebih fungsi objektif sementara nilai fungsi objektif yang lain dimaksimalkan. Agar selaras dengan bentuk umum di atas, setiap fungsi objektif $f_i$  yang hendak diminimalkan dapat diubah menjadi fungsi yang dimaksimalkan dengan transformasi $f_i \rightarrow af_i+b$, di mana $a < 0$. Dengan demikian, tanpa menghilangkan keumuman, setiap masalah optimasi multiobjektif dapat dinyatakan sebagai masalah maksimalisasi.
+
+Vektor $\mathbf{x} = (x_1, x_2, \dots, x_n)^T \in \mathbb{R}^n$ disebut solusi atau vektor keputusan dengan elemen ke-$i$ berupa variabel keputusan $x_i$, untuk setiap $i = 1,2,\dots,n$. Himpunan $S \subseteq \mathbb{R}^n$ disebut sebagai ruang keputusan, yang terdiri dari semua solusi feasibel yang memenuhi batasan berupa pertidaksamaan atau persamaan tertentu. 
+
+Secara matematis, 
+\[
+S = \{\mathbf{x} \in \mathbb{R}^n \mid \forall j = 1, 2, \dots, p,\ \forall k=1,2,\dots,q,\ g_j(\mathbf{x}) \geq 0\ \text{ dan }\ h_k(\mathbf{x})=0\}
+\]
+dengan $p, q \in \mathbb{N}$. Himpunan $\mathbf{f}(S) \subset \mathbb{R}^M$ disebut sebagai ruang objektif, yang merupakan himpunan dari semua vektor nilai objektif yang diperoleh dari solusi feasibel dalam $S$. 
+
+Masalah optimasi multiobjektif di atas dapat ditulis dalam bentuk berikut :
+
+\begin{align}
+\text{Minimalkan} \quad & \mathbf{f}(\mathbf{x}) = [f_1(\mathbf{x}),f_2(\mathbf{x}),\dots,f_m(\mathbf{x})] \\
+\text{dengan} \quad & g_j(\mathbf{x}) \geq 0, \quad j = 1, 2, \dots, p \\
+						   & h_k(\mathbf{x}) = 0, \quad k = 1, 2, \dots, q \\
+						   & \mathbf{x} \in \mathbb{R}^n
+\end{align}  
+
+Berdasarkan kardinalitas domainnya, variabel keputusan dapat dibagi menjadi dua jenis: diskret dan kontinu. Variabel keputusan diskret memiliki domain yang merupakan himpunan terhitung (\textit{countable set}), seperti $\{0,1\}$ (biasa disebut sebagai variabel biner), $\mathbb{N}$, atau $\mathbb{Z}$. Sedangkan variabel keputusan kontinu memiliki domain yang merupakan himpunan takterhitung (\textit{uncountable set}), seperti $\mathbb{R}$, $[0,\infty)$, atau $[0,1]$.

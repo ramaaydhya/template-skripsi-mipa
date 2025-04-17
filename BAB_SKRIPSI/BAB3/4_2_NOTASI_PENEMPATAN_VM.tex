@@ -1,0 +1,34 @@
+Misalkan \textit{data center} memiliki $N_P$ buah PM dan terdapat $N_V$ buah VM yang harus ditempatkan. Definisikan $P=\{p_1,p_2,\dots,p_n\}$ dan $V=\{v_1,v_2,\dots,v_m\}$ masing-masing sebagai himpunan PM dan himpunan VM pada \textit{data center}, di mana $n=N_P$ dan $m=N_V$. 
+
+Penempatan VM pada PM dinyatakan sebagai pemetaan $\pi : V \rightarrow P$, di mana $\pi(v)=p$ jika dan hanya jika VM $v \in V$ ditempatkan pada PM $p \in P$ .
+
+Kebutuhan CPU dan memori dari VM $v_i \in V$ masing-masing dinotasikan sebagai $v_i^\text{cpu}$ dan $v_i^\text{mem}$, sedangkan kapasitas CPU dan memori yang tersedia pada PM $p_j \in P$ dinotasikan sebagai $p_j^\text{cpu}$ dan $p_j^\text{mem}$
+
+Rasio utilisasi CPU dan memori oleh PM $p_j \in P$ didefinisikan sebagai:
+\begin{equation*}U_j^\text{cpu}:= \frac{\displaystyle\sum_{v_i \in V\ :\ \pi(v_i)=p_j} v_i^\text{cpu}}{p_j^\text{cpu}}\end{equation*}
+\begin{equation*}U_j^\text{mem}:=\frac{\displaystyle\sum_{v_i \in V\ :\ \pi(v_i)=p_j }v_i^\text{mem}}{p_j^\text{mem}}\end{equation*}
+, sedangkan rasio sisa CPU dan memori pada PM $p_j \in P$ didefinisikan sebagai $L_j^\text{cpu}:= 1-U_j^\text{cpu}$ dan $L_j^\text{mem}:= 1-U_j^\text{mem}$
+
+PM $p_j \in P$ mengonsumsi energi sebesar $\text{PC}_j^\text{idle}$ ketika beroperasi tanpa menjalankan VM apapun dan mengonsumsi energi sebesar $\text{PC}_j^\text{max}$ ketika $p_j$ ketika CPU digunakan secara penuh. Berdasarkan metrik konsumsi energi PM yang dikembangkan oleh Beloglazov, Abawajy, dan Buyya (2012), konsumsi energi PM $p_j$ ketika CPU digunakan dengan rasio utilisasi $U_j^\text{cpu}$ didefinsikan sebagai:
+\begin{equation*}\text{PC}_j:=\text{PC}_j^{\max} \cdot U_j^\text{cpu} +\text{PC}_j^\text{idle} \cdot (1- U_j^\text{cpu})\end{equation*}
+Total konsumsi energi oleh seluruh PM pada \textit{data center} dapat dihitung sebagai berikut:
+\begin{equation*}\text{PC}_\text{sum}=\sum_{j=1}^{N_P}\text{PC}_jy_j\end{equation*}
+di mana
+\begin{equation*}
+y_j=
+\begin{cases}
+1 & \text{, jika terdapat VM $v \in V$ di mana $\pi(v)=p_j$} \\
+0 & \text{, jika sebaliknya} \\
+\end{cases}
+\end{equation*}
+
+Pemborosan sumber daya oleh PM $p_j \in P$ menurut Gao dkk. (2013) didefinsikan sebagai:
+\begin{equation*}
+\text{RW}_j:=\frac{|L_j^\text{cpu}-L_j^\text{mem}|+\epsilon}{U_j^\text{cpu}+U_j^\text{mem}}
+\end{equation*}
+, di mana $\epsilon > 0$ merupakan bilangan positif yang sangat kecil.
+Total pemborosan sumber daya pada \textit{data center} dapat dihitung sebagai berikut:
+\begin{equation*}
+\text{RW}_\text{sum} = \sum_{j=1}^{N_P}\text{RW}_jy_j
+\begin{equation*}
+

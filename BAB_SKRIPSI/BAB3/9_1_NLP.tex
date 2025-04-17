@@ -1,0 +1,103 @@
+Berikut disajikan model optimasi multiobjektif secara lengkap:
+\begin{longtblr}[
+	label={tab:model-optimasi-lengkap-nlp},
+	caption={Model Optimasi Lengkap untuk Penempatan VM dan Perutean Jaringan}
+]{
+	colspec={rX[l]l}
+}
+Minimalkan & $\text{PC}_\text{sum}$ & (O1) \\ 
+Minimalkan & $\text{RW}_\text{sum}$ & (O2) \\
+Maksimalkan & $\text{BW}_\text{sum}$ & (O3) \\
+Minimalkan & $\text{D}_\text{mean}$ & (O4) \\
+dengan syarat  
+		&
+		$\displaystyle\sum_{j=1}^{N_P} x_{ij} = 1$
+		& (V1)  
+		
+		\\
+		
+		& 
+		$\displaystyle\sum_{i=1}^{N_V} v_{i}^\text{cpu}x_{ij} \leq p_i^\text{cpu}$ 
+		& (V2) 
+		
+		
+		\\
+		
+		&
+		$\displaystyle\sum_{i=1}^{N_V} v_{i}^\text{mem}x_{ij} \leq p_i^\text{mem}$ 
+		& (V3) 
+		 
+		
+		\\
+		
+		& 
+		$x_{ij} \in \{0,1\}$
+		& (V4)
+		 
+		
+		\\
+		
+		& 
+		$y_j =
+			\begin{cases}
+			0 & \text{, jika }\displaystyle \sum_{i=1}^{N_V} x_{ij} = 0 \\
+			1 & \text{, jika }\displaystyle \sum_{i=1}^{N_V} x_{ij} > 0 \\
+			\end{cases}$
+		& (V5) 
+		 
+		
+		\\
+		
+		& 
+		$b_r \geq \displaystyle \frac{x_r}{M}$ 
+		& (N1) 
+		
+		
+		\\
+
+		& 
+		$b_r \leq x_r \cdot b_\text{PM}(p_i,p_j)$ 
+		& (N2)
+		
+		
+		\\
+		
+		&
+		$\displaystyle \sum_{r\in\mathcal{R}^*(p_i,p_j)} x_r \leq k$ 
+		& (N3) 
+		
+		
+		\\
+		
+		&
+		$\displaystyle \sum_{(p_i,p_j) \in P \times P}\ \sum_{{r\in\mathcal{R}^*(p_i,p_j) \ :\ l\in\text{range}(r)}} b_r \leq c_l$ 
+		& (N4)
+		
+		
+		\\
+		
+		&
+		$b_r \in \mathbb{R}$ 
+		& (N5) 
+		
+		
+		\\
+		
+		& 
+		$x_r \in \{0,1\}$ 
+		& (N6) 
+		
+
+\end{longtblr}
+
+
+Fungsi objektif (O1), (O2), dan (O4) berturut-turut dapat dijabarkan menggunakan variabel keputusan sebagai berikut 
+
+\begin{tabular}{ll}
+\text{PC}_\text{sum}=\displaystyle\sum_{j=1}^{N_P}y_j\left((\text{PC}_j^{\max}-\text{PC}_j^\text{idle})\sum_{i=1}^{N_V}\frac{x_{ij}v_{i}^\text{cpu}}{p_j^\text{cpu}} + \text{PC}_j^\text{idle}\right) & \text{(O1)} \\\\
+\text{RW}_\text{sum}=\displaystyle\sum_{j=1}^{N_P}y_j\cdot\frac{\displaystyle\left|\sum_{i=1}^{N_V}x_{ij}(v_i^\text{cpu}p_j^\text{mem}-v_i^\text{mem}p_j^\text{cpu})\right|+p_j^\text{cpu}p_j^\text{mem}\epsilon}{\displaystyle\sum_{i=1}^{N_V}x_{ij}(v_i^\text{cpu}p_j^\text{mem}+v_i^\text{mem}p_j^\text{cpu})} & \text{(O2)} \\\\
+\text{D}_\text{mean}=\frac{\displaystyle \sum_{(p_i,p_j) \in P \times P} \ \sum_{r\in\mathcal{R}^*(p_i,p_j)} \Delta_r\cdot b_r}{\displaystyle \sum_{(p_i,p_j) \in P \times P}\ \sum_{r\in\mathcal{R}^*(p_i,p_j)}x_r} & \text{(O4)} \\
+\end{tabular}
+
+
+Perhatikan bahwa terdapat empat ekspresi yang belum berbentuk linier: fungsi objektif (O1), (O2), (O4), dan kendala (V5). Hal tersebut dapat terlihat dari adanya perkalian antar variabel keputusan pada objektif (O1) dan (O2), nilai mutlak pada objektif (O2), bentuk pecahan pada objektif (O2) dan (O4), serta kondisi logika pada kendala (V5). Agar model di atas dapat diselesaikan menggunakan LP (\textit{linear programming}) \textit{solver}, model tersebut harus diubah ke dalam MILP (\textit{Mixed Integer Linear Programming}). Langkah-langkah konversi setiap ekspresi akan di bahas pada bagian di bawah ini.

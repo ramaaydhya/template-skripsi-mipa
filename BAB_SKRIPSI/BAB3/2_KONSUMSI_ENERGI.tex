@@ -1,0 +1,21 @@
+Berdasarkan laporan penggunaan energi \textit{data center} di Amerika Serikat tahun 2024 yang disusun oleh Lawrence Berkeley National Laboratory, total energi listrik yang dikonsumsi oleh server (mesin fisik) per tahun meningkat dari sekitar 30 TWh pada 2014 menjadi sekitar 100 TWh pada 2023. Sebagian besar peningkatan tersebut disebabkan oleh server AI (\textit{Artificial Intelligence}) yang diakselerasi menggunakan GPU (\textit{Graphical Processing Unit}), yang konsumsinya naik dari <2 TWh pada tahun 2017 menjadi >40 TWh pada 2023. Selain itu, konsumsi energi server konvensional, khususnya server \textit{dual} \textit{processor}, juga meningkat dari sekitar 30 TWh menjadi sekitar 60 TWh. Konsumsi energi server diproyeksikan akan terus meningkat hingga mencapai 240-380 TWh pada 2028.
+
+Konsumsi listrik keseluruhan \textit{data center} pada 2023 mencapai 176 TWh, menyumbang 4,4\% dari total konsumsi energi di Amerika Serikat. Angka ini diproyeksikan meningkat menjadi sekitar 325-580 TWh pada 2028.
+
+Pada 2023, server konvensional dan server AI secara kolektif menyumbang sekitar 60\% konsumsi energi listrik di \textit{data center}, sedangkan infrastruktur pendukung lainnya, seperti sistem pendingin dan distribusi daya, hanya menyumbang sekitar 30\%. Persentase konsumsi energi oleh server diperkirakan akan meningkat menjadi sekitar 65\% pada 2028 akibat semakin maraknya penggunaan AI. Dengan demikian, server tetap menjadi kontributor terbesar dalam konsumsi listrik \textit{data center} dari 2014 hingga 2023, dan diperkirakan hingga 2028.
+
+Pembahasan sebelumnya menunjukkan manajemen energi di \textit{data center} menjadi isu krusial dalam komputasi awan. Konsumsi energi tidak hanya memengaruhi biaya operasional tetapi juga berdampak pada lingkungan, seperti emisi karbon yang dihasilkan oleh perangkat fisik, terutama server.
+
+CPU merupakan komponen server dengan kontribusi konsumsi energi terbesar di antara komponen lainnya (Vasques, Moura \& de Almeida, 2019). Hal ini melatarbelakangi pengembangan model-model konsumsi energi server berdasarkan tingkat penggunaan CPU (Jin dkk., 2020), salah satunya model yang dikembangkan oleh Beloglazlov, Abawajy, dan Buyya (2012). Menurut model ini, mesin fisik \textit{idle} (menyala tetapi tidak menjalankan \textit{task} apapun) rata-rata mengonsumsi energi sebesar 70\% dari energi yang digunakan oleh mesin fisik dengan utilisasi CPU maksimal. Selain itu, konsumsi energi server memiliki hubungan linier dengan tingkat penggunaan CPU-nya, yang dapat diperkirakan menggunakan persamaan berikut.
+\[
+\text{PC}_j=\text{PC}_j^{\max} \cdot U_j^\text{cpu} +\text{PC}_j^\text{idle} \cdot (1- U_j^\text{cpu})
+\]
+Pada persamaan di atas,
+\begin{itemize}
+  \item {$\text{PC}_j \in \mathbb{R}$ merupakan konsumsi daya $p_j$.}
+  \item {$\text{PC}_j^\text{max} \in \mathbb{R}$ merupakan daya maksimum yang dikonsumsi oleh $p_j$ ketika menggunakan CPU secara penuh.}
+  \item {$\text{PC}_j^\text{idle} \in \mathbb{R}$ merupakan daya yang dikonsumsi oleh $p_j$ ketika \textit{idle}. $\text{PC}_j^\text{idle}$ dapat diberi nilai $0.7\text{PC}_j^\max$ berdasarkan penelitian yang dilakukan oleh Beloglazov, Abawajy, dan Buyya (2012).}
+  \item {$U_j^\text{cpu} \in [0,1]$ merupakan persentase penggunaan CPU oleh $p_j$.}   
+\end{itemize}
+
+Karena mesin fisik tetap mengonsumsi daya yang cukup besar walaupun mesin tersebut \textit{idle}, pengurangan konsumsi daya pada \textit{data center} dapat dilakukan dengan mematikan mesin yang \textit{idle}. Dengan demikian, penempatan VM yang mengoptimalkan konsumsi energi akan berusaha menggunakan PM sesedikit mungkin.

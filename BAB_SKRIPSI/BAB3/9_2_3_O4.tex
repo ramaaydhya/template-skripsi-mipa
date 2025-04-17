@@ -1,0 +1,39 @@
+Perhatikan bahwa fungsi objektif (O4) dinyatakan sebagai pecahan dengan kombinasi linier variabel keputusan biner dan kontinu sebagai pembilang dan penyebutnya. Model pemrograman dengan fungsi objektif semacam ini dikategorikan sebagai \textit{Mixed-Integer Linear Fractional Programming} (MILFP). Terdapat beberapa algoritma untuk menyelesaikan MILFP, salah satunya adalah algoritma Dinkelbach (You, Castro & Grossman, 2009).  
+
+Akan tetapi, sebelum algoritma Dinkelbach dapat dijalankan, objektif (O4) harus dinyatakan sebagai masalah maksimalisasi terlebih dahulu. Perhatikan bahwa $\text{D}_\text{mean} \geq 0$, sehingga 
+\begin{equation*}
+  \frac{1}{\min \text{D}_\text{mean}}=\max\frac{1}{\text{D}_\text{mean}}
+\end{equation*} 
+dan 
+\begin{equation*}
+  \operatorname{argmin}\text{D}_\text{mean}=\operatorname{argmax}\frac{1}{\text{D}_\text{mean}}
+\end{equation*} 
+Dengan demikian, MILFP akan mencari solusi yang memaksimalkan ${1}/{\text{D}_\text{mean}}$, tetapi keoptimalan solusi tetap dihitung berdasarkan nilai ${\text{D}_\text{mean}}$.
+
+Untuk mempermudah pembahasan, definisikan
+\begin{equation*}
+Q(\mathbf{b},\mathbf{x}):=\frac{1}{\text{D}_\text{mean}}=\frac{A(\mathbf{b}, \mathbf{x})}{B(\mathbf{b}, \mathbf{x})}
+\end{equation*}
+
+di mana
+\begin{itemize}
+  \item{$\mathbf{b}$ adalah vektor keputusan kontinu dengan elemen $b_r$}
+  \item{$\mathbf{x}$ adalah vektor keputusan biner dengan elemen $x_r$}
+  \item{$A(\mathbf{b}, \mathbf{x})=\sum\sum x_r$}
+  \item{$B(\mathbf{b}, \mathbf{x})=\sum\sum \Delta_r\cdot b_r$}
+\end{itemize}
+
+Berikut algoritma Dinkelbach untuk mencari $\max Q(\mathbf{b},\mathbf{x})$:
+\begin{enumerate}
+  \item{Definisikan $q_0=0$ dan inisialiasi $k \gets 0$}
+  \item{Tentukan nilai $\mathbf{b},\mathbf{x}$ yang memaksimalkan $A(\mathbf{b},\mathbf{x})-q_kB(\mathbf{b},\mathbf{x})$ dengan syarat atau daerah keputusan yang sama dengan model awal. Misalkan solusi optimal untuk $\mathbf{b}$ dan $\mathbf{x}$ berturut-turut sebagai $\mathbf{b}_k$ dan $\mathbf{x}_k$} 
+  \item{Jika $A(\mathbf{b}_k,\mathbf{x}_k)-q_kB(\mathbf{b}_k,\mathbf{x}_k)=0$, hentikan algoritma dan keluarkan $\mathbf{b}_k$ dan $\mathbf{x}_k$ sebagai solusi optimal. Jika sebaliknya, definsikan $q_{k+1}=Q(\mathbf{b}_k,\mathbf{x}_k)$,tetapkan $k \gets k+1$, dan ulangi langkah kedua.}
+\end{enumerate}
+
+Algoritma Dinkelbach memanfaatkan fakta bahwa:
+\begin{itemize}
+  \item{$q^*=\max Q(\mathbf{b},\mathbf{x})=\max\frac{A(\mathbf{b},\mathbf{x})}{B(\mathbf{b},\mathbf{x})}$ jika dan hanya jika $F(q^*)=\max A(\mathbf{b},\mathbf{x})-q^*B(\mathbf{b},\mathbf{x})=0$.} 
+  \item{Barisan $F(q_0), F(q_1), \dots$ merupakan barisan bilangan nonnegatif menurun dengan laju konvergensi superlinier}
+\end{itemize}
+
+Dengan demikian, $\mathbf{b}^*, \mathbf{x}^*$ memaksimalkan $Q(\mathbf{b},\mathbf{x})$ ketika $A(\mathbf{b}^*,\mathbf{x}^*)-Q(\mathbf{b}^*,\mathbf{x}^*)B(\mathbf{b}^*,\mathbf{x}^*)=0$. 
