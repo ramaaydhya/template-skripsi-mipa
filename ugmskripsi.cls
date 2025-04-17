@@ -79,7 +79,7 @@
 \renewcommand \thesection {\@arabic\c@chapter.\@arabic\c@section}
 %\renewcommand\thesubsection {\@alph\c@subsection.}
 \renewcommand\thesubsection {\@arabic\c@chapter.\@arabic\c@section.\@arabic\c@subsection}
-\renewcommand\thesubsubsection{\@arabic\c@chapter.\@arabic\c@section.\@arabic\c@subsection.\@arabic\c@subsubsection}
+% \renewcommand\thesubsubsection{\@arabic\c@chapter.\@arabic\c@section.\@arabic\c@subsection.\@arabic\c@subsubsection}
 %\renewcommand\thesubsubsection{}
 \renewcommand\appendix{\par
   \setcounter{chapter}{0}%

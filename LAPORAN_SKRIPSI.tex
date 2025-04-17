@@ -160,20 +160,146 @@
 \chapter{DASAR TEORI}
 \label{DASAR TEORI}
 
-	\section{Representational State Transfer}
-	\label{dasar teori rest}
-	\input{BAB_SKRIPSI/BAB3/1_VIRTUALISASI}
+	\section{\textit{Cloud Computing}}
+	\label{cloud computing}
+	\input{BAB_SKRIPSI/BAB3/1_CLOUD_COMPUTING}
 
-	\section{JavaScript Object Notation}
-	\label{dasar teori json}
+	\section{Konsumsi Energi \textit{Cloud Data Center}}
+	\label{konsumsi energi}
+	\input{BAB_SKRIPSI/BAB3/2_KONSUMSI_ENERGI}
+	
+	\section{Masalah Optimasi Multiobjektif}
+	\label{multiobjektif}
 
 		\subsection{Definisi}
-		\label{dasar teori definisi json}
-		\input{BAB_SKRIPSI/BAB3/2_1_GEP}
+		\label{definisi multiobjektif}
+		\input{BAB_SKRIPSI/BAB3/3_1_DEFINISI_MASALAH_OPTIMASI_MULTIOBJEKTIF}
+		
+		\subsection{Pemrograman Linier}
+		\label{pemrograman linier}
+		\input{BAB_SKRIPSI/BAB3/3_2_PEMROGRAMAN_LINIER}
+		
+		\subsection{Optimalitas Pareto}
+		\label{optimalitas pareto}
+		\input{BAB_SKRIPSI/BAB3/3_3_OPTIMALITAS_PARETO}
+		
+	\section{Penempatan Mesin Virtual pada Mesin Fisik dalam \textit{Data Center}}
+	\label{penempatan vm}
+		
+		\subsection{Asumsi}
+		\label{asumsi penempatan vm}
+		\input{BAB_SKRIPSI/BAB3/4_1_ASUMSI_PENEMPATAN_VM}
+		
+		\subsection{Notasi}
+		\label{notasi penempatan vm}
+		\input{BAB_SKRIPSI/BAB3/4_2_NOTASI_PENEMPATAN_VM}
+		
+		\subsection{Formulasi Masalah}
+		\label{formulasi masalah penempatan vm}
+		\input{BAB_SKRIPSI/BAB3/4_3_FORMULASI_MASALAH_PENEMPATAN_VM}
+		
+	\section{Penentuan Rute dalam Jaringan \textit{Data Center}}
+	\label{routing}
+	
+	\subsection{Asumsi}
+		\label{asumsi routing}
+		\input{BAB_SKRIPSI/BAB3/5_1_ASUMSI_ROUTING}
+		
+		\subsection{Notasi}
+		\label{notasi routing}
+		\input{BAB_SKRIPSI/BAB3/5_2_NOTASI_ROUTING}
+		
+		\subsection{Formulasi Masalah}
+		\label{formulasi masalah routing}
+		\input{BAB_SKRIPSI/BAB3/5_3_FORMULASI_MASALAH_ROUTING}
+		
+	
+	\section{Algoritma Genetika}
+	\label{GA}
+	\input{BAB_SKRIPSI/BAB3/6_GA}
+	
+	\section{\textit{Nondominated Sorting Genetic Algorithm III} (NSGA-III)}
+	\label{NSGA3}
+	\input{BAB_SKRIPSI/BAB3/7_NSGA3}
+	
+		\subsection{Penentuan Titik Referensi pada Hiperbidang}
+		\label{titik referensi}
+		\input{BAB_SKRIPSI/BAB3/7_1_PENENTUAN_TITIK_REFERENSI}
 
-		\subsection{Contoh}
-		\label{dasar teori contoh json}
-		\input{BAB_SKRIPSI/BAB3/2_2_ACO}
+		\subsection{Inisialisasi Populasi}
+		\label{titik referensi}
+		\input{BAB_SKRIPSI/BAB3/7_2_INISIALISASI_POPULASI}
+
+		\subsection{\textit{Crossover} Individu dan Mutasi \textit{Offspring} dalam Populasi}
+		\label{titik referensi}
+		\input{BAB_SKRIPSI/BAB3/7_3_CROSSOVER_DAN_MUTASI}
+
+		\subsection{Pengurutan Takterdominasi Terhadap Populasi}
+			\label{nondominated sorting}
+			\input{BAB_SKRIPSI/BAB3/7_4_PENGURUTAN_TAKTERDOMINASI}
+
+		\subsection{Normalisasi Populasi}
+			\label{normalisasi populasi}
+			\input{BAB_SKRIPSI/BAB3/7_5_NORMALISASI}
+			
+		\subsection{Asosiasi Individu dengan Titik Referensi}
+			\label{asosiasi individu}
+			\input{BAB_SKRIPSI/BAB3/7_6_ASOSIASI_TITIK_REFERENSI}
+			
+		\subsection{Preservasi \textit{Niche}}
+			\label{preservasi niche}
+			\input{BAB_SKRIPSI/BAB3/7_7_PRESERVASI_NICHE}
+
+		\subsection{Kompleksitas Waktu NSGA-III Per Generasi}
+		\label{kompleksitas waktu}
+		\input{BAB_SKRIPSI/BAB3/7_8_KOMPLEKSITAS}
+	
+	
+	\section{CloudSim Plus}
+	\label{CloudSim Plus}
+	\input{BAB_SKRIPSI/BAB3/8_CLOUDSIM_PLUS}
+	
+	\section{Pemrograman Linier untuk Masalah Penempatan VM dan Penentuan Rute}
+	\label{LP}
+
+		\subsection{Pemrograman Nonlinier}
+		\label{NLP}
+		\input{BAB_SKRIPSI/BAB3/9_1_NLP}
+		
+		\subsection{Konversi ke dalam Pemrograman Linier}
+		\label{konversi NLP ke MILP}
+		
+			\paragraph{Fungsi Objektif (O1)}
+			\label{o1}	
+			\input{BAB_SKRIPSI/BAB3/9_2_1_O1}
+			
+			\paragraph{Fungsi Objektif (O2)}
+			\label{o2}	
+			\input{BAB_SKRIPSI/BAB3/9_2_2_O2}
+			
+			\paragraph{Fungsi Objektif (O4)}
+			\label{o4}	
+			\input{BAB_SKRIPSI/BAB3/9_2_3_O4}
+			
+			\paragraph{Kendala (V5)}
+			\label{v5}	
+			\input{BAB_SKRIPSI/BAB3/9_2_4_V5}
+
+		\subsection{Pemrograman Linier}
+		\label{MILP}
+		\input{BAB_SKRIPSI/BAB3/9_3_MILP}
+	
+	\section{DOCPLEX}
+	\label{docplex}
+	\input{BAB_SKRIPSI/BAB3/10_DOCPLEX}
+
+		% \subsection{Definisi}
+		% \label{dasar teori definisi json}
+		% \input{BAB_SKRIPSI/BAB3/2_1_GEP}
+
+		% \subsection{Contoh}
+		% \label{dasar teori contoh json}
+		% \input{BAB_SKRIPSI/BAB3/2_2_ACO}
 
 %-----------------------------------------------------------------
 % Akhir BAB 3
