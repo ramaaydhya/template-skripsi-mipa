@@ -1,13 +1,13 @@
 Secara matematis, masalah penentuan rute dapat dinyatakan sebagai masalah optimasi multiobjektif berikut:
 \begin{longtblr}{rll}
-Maksimalkan &\text{BW}_\text{sum} & (O3)\\
-Minimalkan & \text{D}_\text{mean} & (O4)\\
-dengan syarat & b_r \geq \displaystyle \frac{x_r}{M} & (N1) & \text{untuk setiap $p_i,p_j \in P$ dan $r \in \mathcal{R}^*(p_i,p_j)$} \\
-	& b_r \leq x_r \cdot b_\text{PM}(p_i,p_j) & (N2) & \text{untuk setiap $p_i,p_j \in P$ dan $r \in \mathcal{R}^*(p_i,p_j)$}\\
-&\displaystyle \sum_{r\in\mathcal{R}^*(p_i,p_j)} x_r \leq k & (N3) & untuk setiap $p_i,p_j \in P$\\
-&\displaystyle \sum_{(p_i,p_j) \in P \times P}\ \sum_{{r\in\mathcal{R}^*(p_i,p_j) \ :\ l\in\text{range}(r)}} b_r \leq c_l & (N4) & \text{untuk setiap $p_i,p_j \in P$ dan $l \in \mathcal{L}$} \\
-& b_r \in \mathbb{R} & (N5) & \text{untuk setiap $p_i,p_j \in P$ dan $r \in \mathcal{R}^*(p_i,p_j)$} \\
-& x_r \in \{0,1\} & (N6) & \text{untuk setiap $p_i,p_j \in P$ dan $r \in \mathcal{R}^*(p_i,p_j)$}
+Maksimalkan & $\text{BW}_\text{sum}$ & (O3)\\
+Minimalkan & $\text{D}_\text{mean}$ & (O4)\\
+dengan syarat & $b_r \geq \displaystyle \frac{x_r}{M}$ & (N1)  \\
+	& $b_r \leq x_r \cdot b_\text{PM}(p_i,p_j)$ & (N2)\\
+&$\displaystyle \sum_{r\in\mathcal{R}^*(p_i,p_j)} x_r \leq k$ & (N3) \\
+&$\displaystyle \sum_{(p_i,p_j) \in P \times P}\ \sum_{{r\in\mathcal{R}^*(p_i,p_j) \ :\ l\in\text{range}(r)}} b_r \leq c_l$ & (N4)   \\
+& $b_r \in \mathbb{R}$ & (N5)  \\
+& $x_r \in \{0,1\}$ & (N6) 
 \end{longtblr}
 Model di atas mempertimbangkan dua objektif, yaitu memaksimalkan alokasi \textit{bandwidth} (O3),  serta meminimalkan \textit{delay} rata-rata di antara semua komunikasi (O4). 
 

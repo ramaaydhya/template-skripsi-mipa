@@ -1,32 +1,32 @@
 Berdasarkan deskripsi masalah di atas, masalah penempatan VM dapat dinyatakan secara matematis secara berikut:
 \begin{longtblr}{rlll}
-Minimalkan & \text{PC}_\text{sum} & (O1)\\ 
-Minimalkan & \text{RW}_\text{sum} & (O2)\\
+Minimalkan & $\text{PC}_\text{sum} & (O1)$\\ 
+Minimalkan & $\text{RW}_\text{sum} & (O2)$\\
 dengan syarat  
 		&
-		\displaystyle\sum_{j=1}^{N_P} x_{ij} = 1 
+		$\displaystyle\sum_{j=1}^{N_P} x_{ij} = 1 $
 		&(V1) 
-		&i = 1, 2, \dots, N_V\\
+		&$i = 1, 2, \dots, N_V$\\
 		& 
-		\displaystyle\sum_{i=1}^{N_V} v_{i}^\text{cpu}x_{ij} \leq p_i^\text{cpu} 
+		$\displaystyle\sum_{i=1}^{N_V} v_{i}^\text{cpu}x_{ij} \leq p_i^\text{cpu}$ 
 		&(V2) 
-		&j=1,2,\dots,N_P \\
+		&$j=1,2,\dots,N_P$ \\
 		&
-		\displaystyle\sum_{i=1}^{N_V} v_{i}^\text{mem}x_{ij} \leq p_i^\text{mem} 
+		$\displaystyle\sum_{i=1}^{N_V} v_{i}^\text{mem}x_{ij} \leq p_i^\text{mem} $
 		&(V3) 
-		&j=1,2,\dots,N_P \\
+		&$j=1,2,\dots,N_P$ \\
 		& 
-		x_{ij} \in \{0,1\}
+		$x_{ij} \in \{0,1\}$
 		&(V4) 
-		&i = 1, 2, \dots, N_V \\
+		&$i = 1, 2, \dots, N_V$ \\
 		& 
-		y_j =
+		$y_j =
 			\begin{cases}
 			0 & \text{, jika }\displaystyle \sum_{i=1}^{N_V} x_{ij} = 0 \\
 			1 & \text{, jika }\displaystyle \sum_{i=1}^{N_V} x_{ij} > 0 \\
-			\end{cases}
+			\end{cases}$
 		&(V5) 
-		&j = 1, 2, \dots, N_P \\
+		&$j = 1, 2, \dots, N_P$ \\
 \end{longtblr}
 
 Model di atas mempertimbangkan dua objektif, yaitu meminimalkan total konsumsi energi seluruh PM (O1), serta meminimalkan total pemborosan sumber daya oleh seluruh PM (O2). Kedua objektif didefinisikan menggunakan variabel $y_j$ pada batasan (V5) untuk memastikan bahwa total dihitung hanya menggunakan PM yang aktif.
