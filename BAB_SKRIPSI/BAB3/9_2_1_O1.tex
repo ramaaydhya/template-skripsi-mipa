@@ -4,7 +4,7 @@ Untuk mempermudah pembahasan, fungsi (O1) dapat dinyatakan sebagai berikut:
 \end{equation*}
 di mana
 \begin{equation*}
-P_{ij}=\displaystyle\frac{v_i^\text{cpu}(\text{PC}_j^\max-\text{PC}_j^\text{idle})}{p_j^\text{cpu}}
+P_{ij}=\displaystyle\frac{v_i^\text{cpu}(\text{PC}_j^{\text{max}}-\text{PC}_j^\text{idle})}{p_j^\text{cpu}}
 \end{equation*}
 Karena kebutuhan sumber daya setiap VM dan kapasitas sumber daya di setiap PM diasumsikan selalu tetap, $P_{ij}$ dianggap sebagai konstanta.
 Perhatikan bahwa pada ekspresi di atas, terdapat perkalian antara variabel biner $x_{ij}$ dan $y_j$, sehingga ekspresi tersebut tidak bersifat linier. Oleh karena itu, didefinisikan $N_V\cdot N_P$ buah variabel keputusan bantu $w_{ij}=x_{ij}y_j$. Kemudian, beberapa batasan untuk $w_{ij}$ ditambahkan ke dalam model di atas sehingga diperoleh model berikut:
@@ -14,5 +14,6 @@ Perhatikan bahwa pada ekspresi di atas, terdapat perkalian antara variabel biner
 \text{dengan syarat} & w_{ij} \leq x_{ij} & \text{(W1)}\\
 & w_{ij} \leq y_{j}& \text{(W2)}\\
 & w_{ij} \geq x_{ij} + y_j - 1& \text{(W3)}\\
+& w_{ij} \in \{0,1\} \text{(W4)}\\
 \end{array}
 \end{equation*}

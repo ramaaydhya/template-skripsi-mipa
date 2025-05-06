@@ -31,61 +31,61 @@ dengan syarat
 		\\
 		
 		& 
-		$x_{ij} \in \{0,1\}$
-		& (V4)
-		 
-		
-		\\
-		
-		& 
 		$y_j =
-			\begin{cases}
+		\begin{cases}
 			0 & \text{, jika }\displaystyle \sum_{i=1}^{N_V} x_{ij} = 0 \\
 			1 & \text{, jika }\displaystyle \sum_{i=1}^{N_V} x_{ij} > 0 \\
 			\end{cases}$
-		& (V5) 
-		 
-		
+			& (V4) 
+			
+			
 		\\
-		
+			
+		& 
+		$x_{ij} \in \{0,1\}$
+		& (V5)
+			 
+			
+		\\
+			
 		& 
 		$b_r \geq \displaystyle \frac{x_r}{M}$ 
-		& (N1) 
+		& (R1) 
 		
 		
 		\\
 
 		& 
 		$b_r \leq x_r \cdot b_\text{PM}(p_i,p_j)$ 
-		& (N2)
+		& (R2)
 		
 		
 		\\
 		
 		&
 		$\displaystyle \sum_{r\in\mathcal{R}^*(p_i,p_j)} x_r \leq k$ 
-		& (N3) 
+		& (R3) 
 		
 		
 		\\
 		
 		&
 		$\displaystyle \sum_{(p_i,p_j) \in P \times P}\ \sum_{{r\in\mathcal{R}^*(p_i,p_j) \ :\ l\in\text{range}(r)}} b_r \leq c_l$ 
-		& (N4)
+		& (R4)
 		
 		
 		\\
 		
 		&
 		$b_r \in \mathbb{R}$ 
-		& (N5) 
+		& (R5) 
 		
 		
 		\\
 		
 		& 
 		$x_r \in \{0,1\}$ 
-		& (N6) 
+		& (R6) 
 		
 
 \end{longtblr}
@@ -100,4 +100,4 @@ Fungsi objektif (O1), (O2), dan (O4) berturut-turut dapat dijabarkan menggunakan
 \end{tabular}
 
 
-Perhatikan bahwa terdapat empat ekspresi yang belum berbentuk linier: fungsi objektif (O1), (O2), (O4), dan kendala (V5). Hal tersebut dapat terlihat dari adanya perkalian antar variabel keputusan pada objektif (O1) dan (O2), nilai mutlak pada objektif (O2), bentuk pecahan pada objektif (O2) dan (O4), serta kondisi logika pada kendala (V5). Agar model di atas dapat diselesaikan menggunakan LP (\textit{linear programming}) \textit{solver}, model tersebut harus diubah ke dalam MILP (\textit{Mixed Integer Linear Programming}). Langkah-langkah konversi setiap ekspresi akan di bahas pada bagian di bawah ini.
+Perhatikan bahwa terdapat empat ekspresi yang belum berbentuk linier: fungsi objektif (O1), (O2), (O4), dan kendala (V4). Hal tersebut dapat terlihat dari adanya perkalian antar variabel keputusan pada objektif (O1) dan (O2), nilai mutlak pada objektif (O2), bentuk pecahan pada objektif (O2) dan (O4), serta kondisi logika pada kendala (V4). Agar model di atas dapat diselesaikan menggunakan LP (\textit{linear programming}) \textit{solver}, model tersebut harus diubah ke dalam MILP (\textit{Mixed Integer Linear Programming}). Langkah-langkah konversi setiap ekspresi akan di bahas pada bagian di bawah ini.
