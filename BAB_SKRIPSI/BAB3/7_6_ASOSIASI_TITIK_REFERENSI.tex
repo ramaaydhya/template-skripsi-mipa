@@ -1,0 +1,31 @@
+Setelah semua vektor objektif $\mathbf{f}(S_t)$ dinormalisasi menjadi $\bar{\mathbf{f}}(S_t)$, tiap individu akan diasosiasikan dengan titik referensi di $Z^\text{ref}$. Definisikan garis referensi $l(\mathbf{r})$ terhadap titik referensi $\mathbf{r} \in Z^\text{ref}$ sebagai garis yang menghubungkan titik $(0,0,\dots,0)$ dan titik $\mathbf{r}$.  Titik $\bar{\mathbf{z}} \in \bar{\mathbf{f}}(S_t)$ diasosiasikan dengan titik $\mathbf{r}$ pada $Z^\text{ref}$ yang memiliki jarak terpendek dari garis $l(\mathbf{r})$. Jarak titik $\bar{\mathbf{z}}$ ke garis $l(\mathbf{r})$ sama dengan panjang ruas garis dari $\bar{\mathbf{z}}$ yang tegak lurus terhadap $l(\mathbf{r})$ dan dapat dihitung dengan rumus di bawah ini:
+
+\begin{equation}
+d^\perp(\bar{\mathbf{z}},\mathbf{r})
+=
+\left\|
+	\bar{\mathbf{z}}-
+	\frac
+		{\mathbf{r}^T \bar{\mathbf{z}} \mathbf{r}}
+		{\|\mathbf{r}\|^2}
+\right\|
+\end{equation}
+
+dengan $\|\mathbf{z}\|=\sqrt{z_1^2+z_2^2+\dots+z_M^2}$ adalah panjang vektor $\mathbf{z}=(z_1,z_2,\dots,z_M)$
+Setiap individu $\mathbf{x} \in S_t$ akan menyimpan dua informasi: titik asosiasi $\pi(\mathbf{x}) \in Z^\text{ref}$, yaitu titik yang diasosiasikan dengan $\bar{\mathbf{f}}(\mathbf{x})$ dan jarak asosiasi $d(\mathbf{x})$, yaitu jarak $\bar{\mathbf{f}}(\mathbf{x})$ dengan $\pi(\mathbf{x})$ sedangkan setiap titik referensi $\mathbf{r} \in Z^\text{ref}$ akan menyimpan informasi mengenai \textit{niche count} $\rho(\mathbf{r})$, yaitu banyak titik yang berasosiasi dengan $\mathbf{r}$. Dengan demikian,
+
+\begin{equation}
+\pi(\mathbf{x})=\underset{\mathbf{r} \in Z^\text{ref}}{\operatorname{argmin}}d^\perp(\bar{\mathbf{f}}(\mathbf{x}),\mathbf{r})
+\end{equation}
+
+
+\begin{equation}
+d(\mathbf{x})=d^\perp(\bar{\mathbf{f}}(\mathbf{x}),\pi(\mathbf{x}))
+\end{equation}
+dan
+
+\begin{equation}
+\rho(\mathbf{r})=|\{\mathbf{x} \in S_t : \pi(\mathbf{x})=\mathbf{r}\}|
+\end{equation}
+
+Perhatikan bahwa beberapa titik referensi mungkin saja berasosiasi dengan lebih dari satu titik ternormalisasi atau tidak berasosiasi dengan titik apapun.

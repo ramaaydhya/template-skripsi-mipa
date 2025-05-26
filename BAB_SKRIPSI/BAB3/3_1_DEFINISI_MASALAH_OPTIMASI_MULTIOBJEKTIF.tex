@@ -1,8 +1,8 @@
-Masalah optimasi multiobjektif merupakan masalah matematika yang melibatkan lebih dari satu fungsi yang disebut dengan fungsi objektif, di mana tujuan utamanya adalah mencari solusi dari himpunan tertentu yang dapat meminimalkan atau memaksimalkan beberapa fungsi objektif secara bersamaan. 
+Masalah optimasi multiobjektif merupakan masalah matematika yang melibatkan lebih dari satu fungsi yang disebut dengan fungsi objektif, di mana tujuan utamanya adalah mencari solusi dari himpunan tertentu yang dapat meminimalkan atau memaksimalkan beberapa fungsi objektif secara bersamaan \citep{CoelloLamontVeldhuizen2007}. 
 
 Diberikan vektor fungsi objektif $\mathbf{f} = [f_1 , f_2 , \cdots , f_m]$ yang terdiri dari $m$ fungsi objektif, yaitu $f_1, f_2, \cdots, f_m$, dengan $\mathbf{f}:\mathbb{R}^n \rightarrow \mathbb{R}^m$. Untuk setiap $i = 1,2,\cdots,m$, fungsi objektif $f_i$ memetakan vektor keputusan atau solusi $\mathbf{x}$ ke nilai objektif dalam $\mathbb{R}$.
 
-Secara umum, masalah optimasi multiobjektif dapat dinyatakan sebagai berikut :
+Secara umum, masalah optimasi multiobjektif dapat dinyatakan sebagai berikut \citep{CoelloLamontVeldhuizen2007}:
 \[
 \max_{\mathbf{x} \in S} \mathbf{f}(\mathbf{x})
 \]
@@ -19,7 +19,7 @@ S = \{\mathbf{x} \in \mathbb{R}^n \mid \forall j = 1, 2, \dots, p,\ \forall k=1,
 \]
 dengan $p, q \in \mathbb{N}$. Himpunan $\mathbf{f}(S) \subset \mathbb{R}^M$ disebut sebagai ruang objektif, yang merupakan himpunan dari semua vektor nilai objektif yang diperoleh dari solusi feasibel dalam $S$. 
 
-Masalah optimasi multiobjektif di atas dapat ditulis dalam bentuk berikut :
+Masalah optimasi multiobjektif di atas dapat ditulis dalam bentuk berikut \citep{CoelloLamontVeldhuizen2007} :
 
 \begin{align}
 \text{Minimalkan} \quad & \mathbf{f}(\mathbf{x}) = [f_1(\mathbf{x}),f_2(\mathbf{x}),\dots,f_m(\mathbf{x})] \\
@@ -28,4 +28,4 @@ Masalah optimasi multiobjektif di atas dapat ditulis dalam bentuk berikut :
 						   & \mathbf{x} \in \mathbb{R}^n
 \end{align}  
 
-Berdasarkan kardinalitas domainnya, variabel keputusan dapat dibagi menjadi dua jenis: diskret dan kontinu. Variabel keputusan diskret memiliki domain yang merupakan himpunan terhitung (\textit{countable set}), seperti $\{0,1\}$ (biasa disebut sebagai variabel biner), $\mathbb{N}$, atau $\mathbb{Z}$. Sedangkan variabel keputusan kontinu memiliki domain yang merupakan himpunan takterhitung (\textit{uncountable set}), seperti $\mathbb{R}$, $[0,\infty)$, atau $[0,1]$.
+Berdasarkan kardinalitas domainnya, variabel keputusan dapat dibagi menjadi dua jenis: diskret dan kontinu. Variabel keputusan diskret memiliki domain yang merupakan himpunan terhitung (\textit{countable set}), seperti $\{0,1\}$ (biasa disebut sebagai variabel biner), $\mathbb{N}$, atau $\mathbb{Z}$. Sedangkan variabel keputusan kontinu memiliki domain yang merupakan himpunan takterhitung (\textit{uncountable set}), seperti $\mathbb{R}$, $[0,\infty)$, atau $[0,1]$ \citep{CoelloLamontVeldhuizen2007}.

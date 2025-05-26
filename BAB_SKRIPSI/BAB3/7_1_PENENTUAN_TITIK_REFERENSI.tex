@@ -1,0 +1,9 @@
+Tahap ini hanya dilakukan apabila pengambil keputusan tidak dapat membentuk titik referensi yang sesuai dengan karakteristik permasalahan. Dalam hal ini, metode \citep{DasDennis1998} dapat digunakan untuk membentuk titik-titik tersebut.  
+
+Misalkan sistem koordinat berdimensi $M$ pada ruang $\mathbb{R}^M$, di mana sumbu $x_m$ menggambarkan nilai fungsi objektif $f_m$. Metode Das dan Dennis meletakkan titik referensi pada \textit{normalized hyperplane} berdimensi $M$, sebuah \textit{hyperplane} dengan persamaan $x_1+x_2+\dots+x_M=1$  pada ruang tersebut. Titik-titik referensi tersebut terletak pada koordinat $(z_1,z_2,\dots,z_M)\in \mathbb{R}^M$, dengan $z_i\in\left\{0,\frac{1}{p},\frac{2}{p},\dots,1\right\}$, untuk suatu bilangan asli $p$, salah satu parameter algoritma NSGA-III. Dengan demikian, terdapat 
+
+\begin{equation}
+  H = {M+p-1 \choose p} = \frac{(M+p-1)!}{p!(M-1)!}
+\end{equation}
+
+buah titik referensi pada \textit{hyperplane} tersebut. Definisikan himpunan $H$ buah titik tersebut sebagai $Z^r$

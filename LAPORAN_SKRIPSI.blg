@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2023/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: LAPORAN_SKRIPSI.aux
+The style file: agsm-id.bst
+Database file #1: BAB_SKRIPSI/BAB8_DAFTAR_PUSTAKA/1_DAFTAR_PUSTAKA.bib
+Warning--I didn't find a database entry for "ZhouChenZhang2017"
+Warning--empty publisher in Luo2014
+You've used 57 entries,
+            2829 wiz_defined-function locations,
+            992 strings with 16105 characters,
+and the built_in function-call counts, 303715 in all, are:
+= -- 49778
+> -- 4364
+< -- 3
++ -- 24434
+- -- 1433
+* -- 26898
+:= -- 60115
+add.period$ -- 60
+call.type$ -- 57
+change.case$ -- 796
+chr.to.int$ -- 57
+cite$ -- 58
+duplicate$ -- 814
+empty$ -- 1853
+format.name$ -- 1565
+if$ -- 54417
+int.to.chr$ -- 5
+int.to.str$ -- 0
+missing$ -- 57
+newline$ -- 180
+num.names$ -- 466
+pop$ -- 261
+preamble$ -- 1
+purify$ -- 855
+quote$ -- 0
+skip$ -- 685
+stack$ -- 0
+substring$ -- 71424
+swap$ -- 44
+text.length$ -- 801
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 212
+warning$ -- 1
+while$ -- 1261
+width$ -- 0
+write$ -- 760
+(There were 2 warnings)

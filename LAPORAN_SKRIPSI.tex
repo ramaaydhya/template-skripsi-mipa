@@ -5,13 +5,17 @@
 % @created 29/02/2016
 % 
 % -----------------------------------------------------------------------
-
 \documentclass[ugmskripsi]{ugmskripsi}
 
 \input{ADDITIONAL_PACKAGES}
 
 % Konfigurasi variable seperti judul dan lain sebagainya
 \input{CONFIG}
+
+
+\makeatletter
+\def\bibligand{ dan }
+\makeatother
 
 
 \begin{document}
@@ -412,7 +416,14 @@
 %-----------------------------------------------------------------
 % Awal Daftar Pustaka
 %-----------------------------------------------------------------
-\input{BAB_SKRIPSI/BAB8_DAFTAR_PUSTAKA/1_DAFTAR_PUSTAKA_MIPA}
+% \input{BAB_SKRIPSI/BAB8_DAFTAR_PUSTAKA/1_DAFTAR_PUSTAKA_MIPA}
+
+\clearpage
+% Manually add Daftar Pustaka to TOC if it doesn't appear automatically
+\phantomsection % Creates a target for the hyperlink
+\addcontentsline{toc}{chapter}{\bibname} % Adds "DAFTAR PUSTAKA" to the TOC
+\nocite{*}
+\bibliography{BAB_SKRIPSI/BAB8_DAFTAR_PUSTAKA/1_DAFTAR_PUSTAKA}
 %-----------------------------------------------------------------
 % Akhir Daftar Pustaka
 %-----------------------------------------------------------------

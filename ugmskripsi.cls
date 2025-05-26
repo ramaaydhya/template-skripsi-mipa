@@ -31,8 +31,13 @@
 \ExecuteOptions{proposal,satusetengahspasi,indonesia}
 \ProcessOptions
 \LoadClass[a4paper,12pt]{report}
-\RequirePackage{natbib}
-\bibliographystyle{natbib}
+
+%------------------------------------------------------------
+%Modified Citation and Bibliography Style (Experimental)
+%------------------------------------------------------------
+\RequirePackage[authoryear, round]{natbib}
+\bibliographystyle{agsm-id}
+
 \RequirePackage{nomencl}%
 \renewcommand{\nomname}{\nomenclaturename}%
 \makeglossary%

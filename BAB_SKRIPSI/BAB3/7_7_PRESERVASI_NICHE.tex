@@ -1,0 +1,15 @@
+Pada tahap ini, sejumlah individu dari \textit{front} takterdominasi $F_l$ dengan vektor ternormalisasi yang berasosiasi dengan satu atau lebih titik referensi akan dipilih sebagai anggota $P_{t+1}$. Seleksi individu dari $F_l$ dilakukan menurut algoritma berikut :
+
+\begin{enumerate}
+  \item Salin semua titik referensi pada $Z^\text{ref}$ ke himpunan $Z^\text{temp}$ dan semua individu pada $F_l$ ke himpunan $F^\text{temp}$ serta inisialiasi variabel $\rho_{\mathbf{r}}$Z^\text{ref}Z dengan \textit{niche count} $\rho(\mathbf{r})$, untuk setiap $\mathbf{r}\in Z^\text{ref}$ 
+  \item Identifikasi titik $Z^\text{temp}$ dengan \textit{niche count} terkecil. Jika terdapat lebih dari satu titik referensi dengan \textit{niche count} yang sama, pilih salah satu secara acak. Titik ini akan diberi nama $\bar{j}$.
+  \item Identifikasi semua individu anggota $F^\text{temp}$ yang berasosiasi dengan $\bar{j}$. Himpun semua titik tersebut ke dalam himpunan $I_{\bar{j}}$
+  \item Jika $I_{\bar{j}}$ kosong, hapus titik $\bar{j}$ dari $Z^\text{temp}$ dan pergi ke langkah \item Sebaliknya, jika $I_{\bar{j}}$ tidak kosong, identifikasi $\rho_\bar{j}$.
+  \item Jika $\rho_\bar{j}=0$, pilih individu dari $I_{\bar{j}}$ dengan jarak asosiasi terkecil.  Jika sebaliknya, pilih individu dari $I_{\bar{j}}$ secara acak. Individu terpilih ini akan bergabung sebagai anggota baru $P_{t+1}$.
+  \item Hapus individu yang terpilih tadi dari $F^\text{temp}$ dan tambahkan $\rho_\bar{j}$ dengan satu.
+  \item Kembali ke langkah 2 dan lanjutkan. Berhenti ketika $P_{t+1}$ sudah memiliki $N$ anggota.
+\end{enumerate}
+
+Di akhir tahap ini, diperoleh $N$ individu anggota $P_{t+1}$. Individu-individu ini akan melakukan \textit{crossover} menghasilkan $N$ \textit{offspring}. Lalu, beberapa \textit{offspring} akan bermutasi sehingga diperoleh $Q_{t+1}'$. Generasi ke-$(t+1)$ akan kembali melalui tahap fast non-dominated sorting, normalisasi, asosiasi dengan titik referensi, dan seleksi dengan preservasi \textit{niche} hingga kondisi berhenti terpenuhi.
+
+Di akhir eksekusi NSGA-III, salah satu solusi dari $F_1$ akan dipilih sebagai aproksimasi terhadap solusi optimal Pareto yang sebenarnya. Seperti yang telah dijelaskan sebelumnya, solusi-solusi yang berada pada front yang sama tidak mendominasi satu sama lain. Artinya, pembuat keputusan dapat memilih solusi mana pun di antara $F_1$ karena secara matematis, semua solusi dari $F_1$ dapat dianggap sama baiknya. 

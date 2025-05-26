@@ -1,0 +1,346 @@
+\begin{thebibliography}{xx}
+
+\harvarditem{Ahmed, Bollen \harvardand\ Alvarez}{2021}{AhmedBollenAlvarez2021}
+Ahmed, K. M.~U., Bollen, M. H.~J. dan Alvarez, M.  \harvardyearleft
+  2021\harvardyearright , A review of data centers energy consumption and
+  reliability modeling, {\em IEEE Access} 9,~152536--152563.
+
+\harvarditem{{AIMMS}}{2023}{AIMMS}
+{AIMMS}  \harvardyearleft 2023\harvardyearright , Optimization modeling,
+  Available at:
+  \url{https://documentation.aimms.com/_downloads/AIMMS_modeling.pdf}.
+
+\harvarditem{Alharabe, Rakrouki \harvardand\
+  Aljohani}{2022}{AlharabeRakroukiAljohani2022}
+Alharabe, N., Rakrouki, M.~A. dan Aljohani, A.  \harvardyearleft
+  2022\harvardyearright , An improved ant colony algorithm for solving a
+  virtual machine placement problem in a cloud computing environment, {\em IEEE
+  Access} 10,~44869--44880.
+
+\harvarditem[Azizi dkk.]{Azizi, Shojafar, Abawajy \harvardand\
+  Buyya}{2021}{Azizi2021}
+Azizi, S., Shojafar, M., Abawajy, J. dan Buyya, R.  \harvardyearleft
+  2021\harvardyearright , Grvmp: A greedy randomized algorithm for virtual
+  machine placement in cloud data centers, {\em IEEE Systems Journal}
+  15(2),~2571--2582.
+
+\harvarditem{Azizi, Zandsalimi \harvardand\ Li}{2020}{AziziZandsalimiLi2020}
+Azizi, S., Zandsalimi, M. dan Li, D.  \harvardyearleft 2020\harvardyearright ,
+  An energy-efficient algorithm for virtual machine placement optimization in
+  cloud data centers, {\em Cluster Computing} 23,~3421--3434.
+
+\harvarditem{Balaji, Kiran \harvardand\ Kumar}{2023}{BalajiKiranKumar2023}
+Balaji, K., Kiran, P.~S. dan Kumar, M.~S.  \harvardyearleft
+  2023\harvardyearright , Power aware virtual machine placement in {IaaS} cloud
+  using discrete firefly algorithm, {\em Applied Nanoscience} 13,~2003--2011.
+
+\harvarditem{Beloglazlov, Abawajy \harvardand\
+  Buyya}{2012}{BeloglazlovAbawajyBuyya2012}
+Beloglazlov, A., Abawajy, J. dan Buyya, R.  \harvardyearleft
+  2012\harvardyearright , Energy-aware resource allocation heuristics for
+  efficient management of data centers for cloud computing, {\em Future
+  Generation Computer Systems} 28(5),~755--768.
+
+\harvarditem[Caviglione dkk.]{Caviglione, Gaggero, Paolucci \harvardand\
+  Ronco}{2021}{Caviglione2021}
+Caviglione, L., Gaggero, M., Paolucci, M. dan Ronco, R.  \harvardyearleft
+  2021\harvardyearright , Deep reinforcement learning for multi-objective
+  placement of virtual machines in cloud datacenters, {\em Soft Computing}
+  25,~12569--12588.
+
+\harvarditem{{Cloudflare}}{n.d.}{Cloudflare}
+{Cloudflare}  \harvardyearleft n.d.\harvardyearright , What is multitenancy?,
+  Cloudflare Learning Center.
+\newline\harvardurl{https://www.cloudflare.com/learning/cloud/what-is-multitenancy}
+
+\harvarditem{Coello, Lamont \harvardand\
+  Veldhuizen}{2007}{CoelloLamontVeldhuizen2007}
+Coello, C. A.~C., Lamont, G.~B. dan Veldhuizen, D. A.~V.  \harvardyearleft
+  2007\harvardyearright , {\em Evolutionary Algorithms for Solving
+  Multi-Objective Problems}, second edn, Springer, New York.
+
+\harvarditem{Das \harvardand\ Dennis}{1998}{DasDennis1998}
+Das, I. dan Dennis, J.~E.  \harvardyearleft 1998\harvardyearright ,
+  Normal-boundary intersection: A new method for generating the pareto surface
+  in nonlinear multicriteria optimization problems, {\em SIAM Journal on
+  Optimization} 8(3),~631--657.
+
+\harvarditem{Deb \harvardand\ Jain}{2014}{Deb2014}
+Deb, K. dan Jain, H.  \harvardyearleft 2014\harvardyearright , An evolutionary
+  many-objective optimization algorithm using reference-point-based
+  nondominated sorting approach, part {I}: Solving problems with box
+  constraints, {\em IEEE Transactions on Evolutionary Computation}
+  18(4),~577--601.
+
+\harvarditem[Deb dkk.]{Deb, Pratap, Agarwal \harvardand\
+  Meyarivan}{2002}{Deb2002}
+Deb, K., Pratap, A., Agarwal, S. dan Meyarivan, T.  \harvardyearleft
+  2002\harvardyearright , A fast and elitist multiobjective genetic algorithm:
+  {NSGA-II}, {\em IEEE Transactions on Evolutionary Computation}
+  6(2),~182--197.
+
+\harvarditem{Ehrgott}{2005}{Ehrgott2005}
+Ehrgott, M.  \harvardyearleft 2005\harvardyearright , {\em Multicriteria
+  Optimization}, second edn, Springer, New York.
+
+\harvarditem{Falkenauer \harvardand\
+  Delchambre}{1992}{FalkenauerDelchambre1992}
+Falkenauer, E. dan Delchambre, A.  \harvardyearleft 1992\harvardyearright , A
+  genetic algorithm for bin packing and line balancing, {\em in} Proceedings of
+  the 1992 {IEEE} International Conference on Robotics and Automation, Nice,
+  France, 1186--1192.
+
+\harvarditem[Fang dkk.]{Fang, Kanagavelu, Lee, Foh \harvardand\
+  Aung}{2013}{Fang2013}
+Fang, S., Kanagavelu, R., Lee, B.~S., Foh, C.~H. dan Aung, K. M.~M.
+  \harvardyearleft 2013\harvardyearright , Power-efficient virtual machine
+  placement and migration in data centers, {\em in} 2013 {IEEE} International
+  Conference on Green Computing and Communications and {IEEE} Internet of
+  Things and {IEEE} Cyber, Physical and Social Computing, Beijing, China.
+
+\harvarditem{Farrugia, Briffa \harvardand\ Buttigieg}{2023}{Farrugia2023}
+Farrugia, N., Briffa, J.~A. dan Buttigieg, V.  \harvardyearleft
+  2023\harvardyearright , Solving the multicommodity flow problem using an
+  evolutionary routing algorithm in a computer network environment, {\em PLoS
+  ONE} 18(4).
+
+\harvarditem[Fatima dkk.]{Fatima, Javaid, Sultana, Hussain, Bilal, Shabbir,
+  Asim, Akbar \harvardand\ Ilahi}{2018}{Fatima2018}
+Fatima, A., Javaid, N., Sultana, T., Hussain, W., Bilal, M., Shabbir, S., Asim,
+  Y., Akbar, M. dan Ilahi, M.  \harvardyearleft 2018\harvardyearright , Virtual
+  machine placement via bin packing in cloud data centers, {\em Electronics}
+  7(12),~389.
+
+\harvarditem{Floudas \harvardand\ Pardalos}{2009}{FloudasPardalos2009}
+Floudas, C.~A. dan Pardalos, P.~M., eds  \harvardyearleft 2009\harvardyearright
+  , {\em Encyclopedia of Optimization}, second edn, Springer, New York.
+
+\harvarditem[Ford dkk.]{Ford, Raiciu, Handley, Barre \harvardand\
+  Iyengar}{2011}{Ford2011}
+Ford, A., Raiciu, C., Handley, M., Barre, S. dan Iyengar, J.  \harvardyearleft
+  2011\harvardyearright , Architectural guidelines for multipath {TCP}
+  development, Request For Comments 6182, Internet Engineering Task Force.
+\newline\harvardurl{https://www.rfc-editor.org/rfc/rfc6182.html}
+
+\harvarditem[Gao dkk.]{Gao, Guan, Qi, Hou \harvardand\ Liu}{2013}{Gao2013}
+Gao, Y., Guan, H., Qi, Z., Hou, Y. dan Liu, L.  \harvardyearleft
+  2013\harvardyearright , A multi-objective ant colony system algorithm for
+  virtual machine placement in cloud computing, {\em Journal of Computer and
+  System Sciences} 79,~1230--1242.
+
+\harvarditem{Ghasemi \harvardand\ Keshavarzi}{2024}{GhasemiKeshavarzi2024}
+Ghasemi, A. dan Keshavarzi, A.  \harvardyearleft 2024\harvardyearright ,
+  Energy-efficient virtual machine placement in heterogenous cloud data
+  centers: a clustering-enhanced multi-objective, multi-reward reinforcement
+  learning approach, {\em Cluster Computing} 27,~14149--14166.
+
+\harvarditem{Ghasemi, Haghighat \harvardand\
+  Keshavarzi}{2024}{GhasemiHaghighatKeshavarzi2024}
+Ghasemi, A., Haghighat, A.~T. dan Keshavarzi, A.  \harvardyearleft
+  2024\harvardyearright , Enhancing virtual machine placement efficiency in
+  cloud datacenters: a hybrid approach using multi-objective reinforcement
+  learning and clustering strategies, {\em Computing} 106,~2897--2922.
+
+\harvarditem{Ghetas}{2021}{Ghetas2021}
+Ghetas, M.  \harvardyearleft 2021\harvardyearright , A multi-objective monarch
+  butterfly algorithm for virtual machine placement in cloud computing, {\em
+  Neural Computing and Applications} 33,~11011--11025.
+
+\harvarditem{Gopu \harvardand\ Venkataraman}{2019}{GopuVenkataraman2019}
+Gopu, A. dan Venkataraman, N.  \harvardyearleft 2019\harvardyearright , Optimal
+  {VM} placement in distributed cloud environment using {MOEA/D}, {\em Soft
+  Computing} 23,~11277--11296.
+
+\harvarditem[Gopu dkk.]{Gopu, Thirugnanasambandam, Rajakumar, Al-Ghamdi,
+  Alshamrani, Maharajan \harvardand\ Rashid}{2023}{Gopu2023}
+Gopu, A., Thirugnanasambandam, K., Rajakumar, Al-Ghamdi, A.~S., Alshamrani,
+  S.~S., Maharajan, K. dan Rashid, M.  \harvardyearleft 2023\harvardyearright ,
+  Energy-efficient virtual machine placement in distributed cloud using
+  {NSGA-III} algorithm, {\em Journal of Cloud Computing} 12,~124.
+
+\harvarditem[Hill dkk.]{Hill, Hirsch, Lake \harvardand\
+  Moshiri}{2013}{Hill2013}
+Hill, R., Hirsch, L., Lake, P. dan Moshiri, S.  \harvardyearleft
+  2013\harvardyearright , {\em Guide to Cloud Computing: Principles and
+  Practice}, Springer, London.
+
+\harvarditem[Hong dkk.]{Hong, Kandula, Mahajan, Zhang, Gill, Nanduri
+  \harvardand\ Wattenhofer}{2013}{Hong2013}
+Hong, C.~Y., Kandula, S., Mahajan, R., Zhang, M., Gill, V., Nanduri, M. dan
+  Wattenhofer, R.  \harvardyearleft 2013\harvardyearright , Achieving high
+  utilization with software-driven {WAN}, {\em in} {SIGCOMM} '13: Proceedings
+  of the 2018 Conference of the {ACM} Special Interest Group on Data
+  Communication, Hong Kong, China.
+
+\harvarditem[Hong dkk.]{Hong, Mandal, Al-Fares, Zhu, Alimi, Naidu, Bhagat,
+  Jain, Kaimal, Liang, Mendelev, Padgett, Rabe, Ray, Tewari, Tierney, Zahn,
+  Zolla, Ong \harvardand\ Vahdat}{2018}{Hong2018}
+Hong, C.~Y., Mandal, S., Al-Fares, M., Zhu, M., Alimi, R., Naidu, B.~K.,
+  Bhagat, C., Jain, S., Kaimal, J., Liang, S., Mendelev, K., Padgett, S., Rabe,
+  F., Ray, S., Tewari, M., Tierney, M., Zahn, M., Zolla, J., Ong, J. dan
+  Vahdat, A.  \harvardyearleft 2018\harvardyearright , {B4} and after: Managing
+  hierarchy, partitioning, and asymmetry for availability and scale in
+  google’s software-defined {WAN}, {\em in} {SIGCOMM} '18: Proceedings of the
+  2018 Conference of the {ACM} Special Interest Group on Data Communication,
+  Budapest, Hungary.
+
+\harvarditem{{Huawei Technologies Co., Ltd.}}{2023}{Huawei}
+{Huawei Technologies Co., Ltd.}  \harvardyearleft 2023\harvardyearright , {\em
+  Cloud Computing Technology}, Springer, Singapore.
+
+\harvarditem{{IBM Decision Optimization}}{n.d.}{DOcplex}
+{IBM Decision Optimization}  \harvardyearleft n.d.\harvardyearright , {CPLEX}
+  modeling for python ({DOcplex}) {V2.25} documentation, Available at:
+  \url{https://ibmdecisionoptimization.github.io/docplex-doc}.
+
+\harvarditem[Jiang dkk.]{Jiang, Lan, Ha, Chen \harvardand\
+  Chiang}{2012}{Jiang2012}
+Jiang, J.~W., Lan, T., Ha, S., Chen, M. dan Chiang, M.  \harvardyearleft
+  2012\harvardyearright , Joint {VM} placement and routing for data center
+  traffic engineering, {\em in} 2012 Proceedings {IEEE INFOCOM}, Orlando, USA.
+
+\harvarditem[Jin dkk.]{Jin, Bai, Yang, Mao \harvardand\ Xu}{2020}{Jin2020}
+Jin, C., Bai, X., Yang, C., Mao, W. dan Xu, X.  \harvardyearleft
+  2020\harvardyearright , A review of power consumption models of servers in
+  data centers, {\em Applied Energy} 265,~114806.
+
+\harvarditem{Kao}{2008}{Kao2008}
+Kao, M.~Y., ed.  \harvardyearleft 2008\harvardyearright , {\em Encyclopedia of
+  Algorithms}, first edn, Springer, New York.
+
+\harvarditem{Korte \harvardand\ Vygen}{2012}{KorteVygen2012}
+Korte, B. dan Vygen, J.  \harvardyearleft 2012\harvardyearright , {\em
+  Combinatorial Optimization: Theory and Algorithms}, fifth edn, Springer.
+
+\harvarditem[Liu dkk.]{Liu, Shen, Li \harvardand\ Wang}{2014}{Liu2014}
+Liu, C., Shen, C., Li, S. dan Wang, S.  \harvardyearleft 2014\harvardyearright
+  , A new evolutionary multi-objective algorithm to virtual machine placement
+  in virtualized data center, {\em in} 2014 {IEEE} 5th International Conference
+  on Software Engineering and Service Science, Beijing, China.
+\newblock Accessed: 2025-03-15.
+
+\harvarditem[Liu dkk.]{Liu, Zhan, Deng, Li, Gu \harvardand\
+  Zhang}{2018}{Liu2018}
+Liu, X.~F., Zhan, Z.~H., Deng, J.~D., Li, Y., Gu, T. dan Zhang, J.
+  \harvardyearleft 2018\harvardyearright , An energy efficient ant colony
+  system for virtual machine placement in cloud computing, {\em IEEE
+  Transactions on Evolutionary Computation} 22(1),~113--128.
+
+\harvarditem[Luo dkk.]{Luo, Qian, Dong, Ota \harvardand\ Lu}{2014}{Luo2014}
+Luo, G., Qian, Z., Dong, M., Ota, K. dan Lu, S.  \harvardyearleft
+  2014\harvardyearright , Network-aware re-scheduling: Towards improving
+  network performance of virtual machines in a data center, {\em in} Lecture
+  Notes in Computer Science, Vol. 8643, 255--269.
+
+\harvarditem{Mell \harvardand\ Grance}{2011}{MellGrance2011}
+Mell, P. dan Grance, T.  \harvardyearleft 2011\harvardyearright , The {NIST}
+  definition of cloud computing, Special Publication 800-145, National
+  Institute of Standards and Technology.
+\newline\harvardurl{https://doi.org/10.6028/NIST.SP.800-145}
+
+\harvarditem[Qin dkk.]{Qin, Wang, Yi, Li \harvardand\ Zhai}{2020}{Qin2020}
+Qin, Y., Wang, H., Yi, S., Li, X. dan Zhai, L.  \harvardyearleft
+  2020\harvardyearright , Virtual machine placement based on multi-objective
+  reinforcement learning, {\em Applied Intelligence} 50,~2370--2383.
+
+\harvarditem[Shehabi dkk.]{Shehabi, Smith, Hubbard, Newkirk, Lei, Siddik,
+  Holecek, Koomey, Masanet \harvardand\ Sartor}{2024}{Shehabi2024}
+Shehabi, A., Smith, S., Hubbard, A., Newkirk, A., Lei, N., Siddik, M., Holecek,
+  B., Koomey, J., Masanet, E. dan Sartor, D.  \harvardyearleft
+  2024\harvardyearright , 2024 united states data center energy usage report,
+  Technical report, Lawrence Berkeley National Laboratory, Berkeley,
+  California.
+
+\harvarditem{Sivanandam \harvardand\ Deepa}{2008}{SivanandamDeepa2008}
+Sivanandam, S.~N. dan Deepa, S.~N.  \harvardyearleft 2008\harvardyearright ,
+  {\em Introduction to Genetic Algorithms}, Springer.
+
+\harvarditem{Sonklin \harvardand\ Sonklin}{2023}{SonklinSonklin2023}
+Sonklin, C. dan Sonklin, K.  \harvardyearleft 2023\harvardyearright , A
+  multi-objective grouping genetic algorithm for server consolidation in cloud
+  data centers, {\em in} The 20th International Joint Conference on Computer
+  Science and Software Engineering ({JCSSE}2023), Phitsanulok, Thailand.
+
+\harvarditem{Tang \harvardand\ Pan}{2014}{TangPan2014}
+Tang, M. dan Pan, S.  \harvardyearleft 2014\harvardyearright , A hybrid genetic
+  algorithm for the energy-efficient virtual machine placement problem in data
+  centers, {\em Neural Processing Letters} 211--221.
+
+\harvarditem[Tao dkk.]{Tao, Li, Liao \harvardand\ Laili}{2016}{Tao2016}
+Tao, F., Li, C., Liao, T.~W. dan Laili, Y.  \harvardyearleft
+  2016\harvardyearright , {BGM-BLA}: A new algorithm for dynamic migration of
+  virtual machines in cloud computing, {\em IEEE Transactions on Services
+  Computing} 9(6),~910--925.
+
+\harvarditem{Tripathi, Pathak \harvardand\
+  Vidyarthi}{2020}{TripathiPathakVidyarthi2020}
+Tripathi, A., Pathak, I. dan Vidyarthi, D.~P.  \harvardyearleft
+  2020\harvardyearright , Modified dragonfly algorithm for optimal virtual
+  machine placement in cloud computing, {\em Journal of Network and Systems
+  Management} 28,~1316--1342.
+
+\harvarditem{Vasques, Moura \harvardand\
+  de~Almeida}{2019}{VasquesMouraAlmeida2019}
+Vasques, T.~L., Moura, P. dan de~Almeida, A.  \harvardyearleft
+  2019\harvardyearright , A review on energy efficiency and demand response
+  with focus on small and medium data centers, {\em Energy Efficiency}
+  12,~1399--1428.
+
+\harvarditem[Wei dkk.]{Wei, Gu, Lu, Zhou \harvardand\ Liu}{2019}{Wei2019}
+Wei, W., Gu, H., Lu, W., Zhou, T. dan Liu, X.  \harvardyearleft
+  2019\harvardyearright , Energy efficient virtual machine placement with an
+  improved ant colony optimization over data center networks, {\em IEEE Access}
+  7,~60617--60625.
+
+\harvarditem{Wu}{2021}{Wu2021}
+Wu, X.  \harvardyearleft 2021\harvardyearright , A {GA}-based energy aware
+  virtual machine placement algorithm for cloud data centers, {\em in} 2021
+  12th International Symposium on Parallel Architectures, Algorithm and
+  Programming.
+\newblock Accessed: 2025-03-15.
+
+\harvarditem{Xu \harvardand\ Fortes}{2010}{XuFortes2010}
+Xu, J. dan Fortes, J. A.~B.  \harvardyearleft 2010\harvardyearright ,
+  Multi-objective virtual machine placement in virtualized data center
+  environments, {\em in} 2010 {IEEE/ACM} International Conference on Green
+  Computing and Communications \& 2010 {IEEE/ACM} International Conference on
+  Cyber, Physical and Social Computing.
+\newblock Accessed: 2025-03-15.
+
+\harvarditem{Yao, Shen \harvardand\ Wang}{2019}{YaoShenWang2019}
+Yao, W., Shen, Y. dan Wang, D.  \harvardyearleft 2019\harvardyearright , A
+  weighted pagerank-based algorithm for virtual machine placement in cloud
+  computing, {\em IEEE Access} 7,~176369--176381.
+
+\harvarditem{Ye, Yin \harvardand\ Lan}{2017}{YeYinLan2017}
+Ye, X., Yin, Y. dan Lan, L.  \harvardyearleft 2017\harvardyearright ,
+  Energy-efficient many-objective virtual machine placement optimization in a
+  cloud computing environment, {\em IEEE Access} 5,~16006--16020.
+
+\harvarditem{You, Castro \harvardand\ Grossmann}{2009}{You2009}
+You, F., Castro, P.~M. dan Grossmann, I.~E.  \harvardyearleft
+  2009\harvardyearright , {Dinkelbach}'s algorithm as an efficient method to
+  solve a class of {MINLP} models for large-scale cyclic scheduling problems,
+  {\em Computers and Chemical Engineering} 33,~1879--1889.
+
+\harvarditem{Yousefi \harvardand\ Babamir}{2024}{YousefiBabamir2024}
+Yousefi, M. dan Babamir, S.~M.  \harvardyearleft 2024\harvardyearright , A
+  hybrid energy-aware algorithm for virtual machine placement in cloud
+  computing, {\em Computing} 106,~1297--1320.
+
+\harvarditem{Zhang \harvardand\ Li}{2007}{ZhangLi2007}
+Zhang, Q. dan Li, H.  \harvardyearleft 2007\harvardyearright , {MOEA/D}: A
+  multiobjective evolutionary algorithm based on decomposition, {\em IEEE
+  Transactions on Evolutionary Computation} 11(6),~712--731.
+
+\harvarditem{Zhao, Zhou \harvardand\ Li}{2019}{ZhaoZhouLi2019}
+Zhao, D., Zhou, J. dan Li, K.  \harvardyearleft 2019\harvardyearright , An
+  energy-aware algorithm for virtual machine placement in cloud computing, {\em
+  IEEE Access} 7,~55659--55668.
+
+\harvarditem{Zhou, Chen \harvardand\ Zhang}{2017}{Zhou2017}
+Zhou, Y., Chen, Z. dan Zhang, Y.  \harvardyearleft 2017\harvardyearright ,
+  Ranking vectors by means of the dominance degree matrix, {\em IEEE
+  Transactions on Evolutionary Computation} .
+
+\end{thebibliography}

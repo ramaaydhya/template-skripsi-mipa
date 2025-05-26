@@ -1,0 +1,92 @@
+Tahap normalisasi populasi dilakukan untuk memetakan nilai ke-$M$ fungsi objektif tiap individu terhadap $[0,1]$. Pertama, $|S_t|$ buah titik $\mathbf{z}^{(i)} = \mathbf{f}(\mathbf{x}^{(i)})\in \mathbb{R}^M$ dikonstruksi sebagai representasi tiap individu $\mathbf{x}^{(i)} \in S_t$. Definisikan $\mathbf{f}(S_t)=\{\mathbf{f}(\mathbf{x}) : \mathbf{x} \in S_t\}$.
+
+Kemudian, titik-titik tersebut ditranslasi supaya titik ideal pada $S_t$ berada pada posisi $(0,0,\dots,0)$. Titik ideal pada $S_t$ merupakan titik $\mathbf{z}^{\min} = (z_1^{\min}, z_2^{\min}, \dots, z_M^{\min}) \in \mathbb{R}^M$ dengan 
+
+\begin{equation}
+  z_i^{\min} = \min_{\mathbf{x}\in S_t}f_i(\mathbf{x})
+\end{equation}
+
+Dengan demikian, posisi akhir $\mathbf{z}^{(i)}$ setelah translasi adalah $\mathbf{z'}^{(i)} = \mathbf{z}^{(i)} - \mathbf{z}^{\min}$
+
+Selanjutnya, $M$ buah titik dari $S_t$ dipilih sebagai titik ekstrem terhadap masing-masing fungsi objektif. Definisikan titik $\mathbf{z}^{\text{ext},m} = (z^{\text{ext},m}_1,z^{\text{ext},m}_2,\dots,z^{\text{ext},m}_M)$ sebagai titik ekstrem terhadap fungsi objektif $f_m$, untuk $m=1,2,\dots,M$. Titik $\mathbf{z}^{\text{ext},m}$ merupakan titik yang memenuhi persamaan berikut :  
+
+\begin{equation}
+  z_i^{\text{ext},m}=
+  \underset{\mathbf{z} \in \mathbf{f}(S_t)}{\operatorname{argmin}}\max_{1\leq j \leq M}\frac{z_j}{w^{(i)}_j}
+\end{equation}
+
+Pada persamaan di atas, $z_j$ merupakan koordinat ke-$j$ titik $\mathbf{z} \in \mathbf{f}(S_t)$ sedangkan 
+
+\begin{equation}
+  w_m^{(i)}=
+  \begin{cases}
+    1 & \text{jika $i=m$} \\
+    \varepsilon & \text{jika $i \neq m$} 
+  \end{cases}
+\end{equation}
+
+$\varepsilon$ adalah bilangan positif yang sangat kecil mendekati $0$. Pada penelitian ini, dipilih $\varepsilon = 10^{-10}$. 
+
+$M$ buah titik ekstrem tersebut diskalakan supaya berada pada \textit{normalized hyperplane}. Sebelumnya, persamaan \textit{hyperplane} yang melalui $M$ titik tersebut dicari terlebih dahulu. 
+Misalkan \textit{hyperplane} tersebut memenuhi persamaan $a_1x_1+a_2x_2+\dots+a_Mx_M=1$ untuk suatu koefisien $a_1,a_2,\dots,a_M\in\mathbb{R}$. Maka, nilai koefisien tersebut dapat diperoleh dengan menyelesaikan persamaan $\mathbf{Za=1}$, dengan
+
+\begin{equation}
+  \mathbf{Z} = 
+  \begin{bmatrix}
+    \mathbf{z}^{\text{ext},1}\\
+    \mathbf{z}^{\text{ext},2}\\
+    \vdots\\
+    \mathbf{z}^{\text{ext},M}
+  \end{bmatrix} = 
+  \begin{bmatrix}
+    z^{\text{ext},1}_1 & z^{\text{ext},1}_2 & \cdots & z^{\text{ext},1}_M \\
+    z^{\text{ext},2}_1 & z^{\text{ext},2}_2 & \cdots & z^{\text{ext},2}_M \\
+    \vdots & \vdots & \ddots & \vdots \\
+    z^{\text{ext},M}_1 & z^{\text{ext},M}_2 & \cdots & z^{\text{ext},M}_M
+  \end{bmatrix}
+\end{equation}
+
+dan
+
+\begin{equation}
+  \mathbf{a} = 
+  \begin{bmatrix}
+    a_1 \\
+    a_2 \\
+    \vdots \\
+    a_M
+  \end{bmatrix}
+\end{equation}
+
+serta
+
+\begin{equation}
+  \mathbf{1} =
+  \begin{bmatrix}
+    1 \\
+    1 \\
+    \vdots \\
+    1
+  \end{bmatrix}
+\end{equation}
+
+Dengan demikian, koefisien dapat dicari dengan mencari $\mathbf{a=Z^{-1}1}$ .
+\textit{Hyperplane} ini memotong sumbu $x_m$ pada titik $\mathbf{p}^{(m)}=(0,\dots,\frac{1}{a_m},\dots,0)$. Agar hyperplane ini memotong pada titik $(0,\dots,1,\dots,0)$, setiap koordinat titik potongnya dikalikan dengan $a_m$. Begitu juga dengan semua titik $\mathbf{z} = (z_1,z_2,\dots,z_M) \in \mathbf{f}(S_t)$. Titik $\mathbf{z}$ dinormalisasi menjadi 
+
+\begin{equation}
+  \bar{\mathbf{z}}=(a_1z_1,a_2z_2,\dots,a_Mz_M) \in [0,1]^M
+\end{equation}
+
+dan individu $\mathbf{x} \in S_t$ mempunyai vektor objektif ternormalisasi 
+
+\begin{equation}
+  \bar{\mathbf{f}}(\mathbf{x}) = (a_1f_1(\mathbf{x}),a_2f_2(\mathbf{x}),\dots,a_Mf_M(\mathbf{x}))
+\end{equation}
+
+Jadi, di akhir tahap ini, diperoleh himpunan titik ternormalisasi $\bar{\mathbf{f}}(S_t)$, dengan 
+
+\begin{equation}
+  \bar{\mathbf{f}}(S_t)=\{(a_1z_1,a_2z_2,\dots,a_Mz_M) \mid (z_1,z_2,\dots,z_M) \in \mathbf{f}(S_t)\}
+\end{equation}
+
+

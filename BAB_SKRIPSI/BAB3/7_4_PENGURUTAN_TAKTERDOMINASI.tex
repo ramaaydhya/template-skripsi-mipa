@@ -1,0 +1,235 @@
+Karena \textit{non-dominated sorting} merupakan salah satu komponen utama dalam berbagai MOEA (\textit{Multi-Objective Evolutionary Algorithms} atau algoritma evolusioner multiobjektif), terutama NSGA, berbagai metode \textit{non-dominated sorting} telah dikembangkan dalam dua dekade terakhir untuk meningkatkan performa \textit{fast non-dominated sort} yang digunakan pada NSGA-II (Deb dkk., 2002). Metode ini memiliki kompleksitas waktu sebesar $O(MN^2)$, di mana $M$ adalah jumlah objektif dalam masalah multiobjektif, dan $N$ adalah ukuran populasi. Untuk mengatasi keterbatasan ini, \citep{ZhouChenZhang2017} mengusulkan metode DDA-NS (\textit{Dominance Degree Approach for Nondominated Sorting}), yang memiliki kompleksitas waktu lebih efisien, yaitu $O(MN\log N)$. Metode DDANS menggunakan sebuah matriks yang disebut sebagai matriks dominasi untuk mengidentifikasi pasangan individu yang memenuhi relasi dominasi $\prec$. 
+
+Definisikan $\deg(\mathbf{y},\mathbf{z})$ sebagai jumlah indeks $i$ yang memenuhi $y_i \leq z_i$ untuk $0 \leq i\leq M$. Dapat ditunjukkan bahwa
+
+\begin{itemize}
+  \item $0 \leq \deg(\mathbf{y},\mathbf{z}) \leq M$ 
+  \item $\deg(\mathbf{y},\mathbf{z})=M$ jika dan hanya jika $\mathbf{y} \prec \mathbf{z}$ atau $\mathbf{y} = \mathbf{z}$.
+  \item $\deg(\mathbf{y},\mathbf{z})+\deg(\mathbf{z},\mathbf{y})=M$
+\end{itemize}
+
+Sebagai contoh, misalkan 
+
+\begin{equation}
+  \mathbf{z}^{(1)}=\begin{bmatrix}0.67228 & 0.29762 & 0.37744\end{bmatrix}
+\end{equation}
+
+dan 
+
+\begin{equation}
+  \mathbf{z}^{(2)}=\begin{bmatrix}0.48808 & 0.04670 & 0.49415\end{bmatrix}
+\end{equation}
+
+, maka $\deg(\mathbf{z}^{(1)},\mathbf{z}^{(2)})=2$ karena $0.67288 > 0.48808$, $0.29762 \leq 0.04670$, dan $0.37744 \leq 0.49415$ 
+
+Misalkan $\mathbf{f}(R_t) = \{\mathbf{z}^{(1)}, \mathbf{z}^{(2)}, \cdots, \mathbf{z}^{(n)}\}$ sebagai himpunan vektor objektif dari setiap individu di $R_t$. Maka, matriks dominasi $D = [d_{ij}]_{n \times n}$ untuk relasi dominasi $\prec$ pada $\mathbf{f}(R_t)$ didefinisikan sebagai $d_{ij} = \deg(\mathbf{z}^{(i)},\mathbf{z}^{(j)})$, untuk setiap vektor objektif $\mathbf{z}^{(i)}, \mathbf{z}^{(j)} \in \mathbf{f}(R_t)$.  
+
+Metode DDANS terbagi menjadi empat tahap: 
+\begin{itemize}
+  \item Bentuk matriks 
+  \begin{equation}
+    Z = 
+    \begin{bmatrix}
+      \mathbf{z}^{(1)} & \mathbf{z}^{(2)} & \cdots & \mathbf{z}^{(n)}
+    \end{bmatrix}
+    = 
+    \begin{bmatrix}
+      z^{(1)}_1 & z^{(2)}_1 & \cdots & z^{(n)}_1 \\
+      z^{(1)}_2 & z^{(2)}_2 & \cdots & z^{(n)}_2 \\
+      \vdots & \vdots & \ddots & \vdots \\
+      z^{(1)}_n & z^{(2)}_n & \cdots & z^{(n)}_n \\
+    \end{bmatrix}
+  \end{equation}
+
+  \item Misalkan $Z_i = \begin{bmatrix}z_i^{(1)} & z_i^{(2)} & \cdots & z_i^{(n)}\end{bmatrix}$ sebagai baris ke-$i$ matriks $Z$. Tentukan $C(Z[i])$, matriks pembanding dari $Z[i]$
+
+  \item Bentuk matriks dominasi $D$ dengan menjumlahkan semua $C(Z[i])$
+
+  \item Urutkan $\{\mathbf{z}^{(1)}, \mathbf{z}^{(2)}, \cdots, \mathbf{z}^{(n)}\}$ berdasarkan $D$
+\end{itemize}
+
+Sebagai contoh, misalkan $\mathbf{f}(R_t)$ berisi enam vektor objektif berdimensi tiga, dengan 
+
+\begin{equation}
+  \begin{align}
+    \mathbf{z}^{(1)}=\mathbf{f}(\mathbf{x}^{(1)})=\begin{bmatrix}0.67228 & 0.29762 & 0.37744\end{bmatrix}\\
+    \mathbf{z}^{(2)}=\mathbf{f}(\mathbf{x}^{(2)})=\begin{bmatrix}0.48808 & 0.04670 & 0.49415\end{bmatrix}\\
+    \mathbf{z}^{(3)}=\mathbf{f}(\mathbf{x}^{(3)})=\begin{bmatrix}0.82550 & 0.99063 & 0.92895\end{bmatrix}\\
+    \mathbf{z}^{(4)}=\mathbf{f}(\mathbf{x}^{(4)})=\begin{bmatrix}0.03145 & 0.00683 & 0.39545\end{bmatrix}\\
+    \mathbf{z}^{(5)}=\mathbf{f}(\mathbf{x}^{(5)})=\begin{bmatrix}0.80805 & 0.76979 & 0.97396\end{bmatrix}\\
+    \mathbf{z}^{(6)}=\mathbf{f}(\mathbf{x}^{(6)})=\begin{bmatrix}0.56562 & 0.74677 & 0.52441\end{bmatrix}\\
+  \end{align}
+\end{equation}
+
+, maka 
+
+\begin{equation}
+  Z = 
+  \begin{bmatrix} 
+    0.67228 & 0.48808 & 0.82550 & 0.03145 & 0.80805 & 0.56562 \\
+    0.29762 & 0.04670 & 0.99063 & 0.00683 & 0.76979 & 0.74677 \\
+    0.37744 & 0.49415 & 0.92895 & 0.39545 & 0.97396 & 0.52441
+  \end{bmatrix}
+\end{equation}
+
+dan
+\begin{equation}
+  \begin{align}
+  Z_1 =
+  \begin{bmatrix}
+    0.67228 & 0.48808 & 0.82550 & 0.03145 & 0.80805 & 0.56562
+  \end{bmatrix} \\
+  Z_2 =
+  \begin{bmatrix}
+    0.29762 & 0.04670 & 0.99063 & 0.00683 & 0.76979 & 0.74677
+  \end{bmatrix} \\
+  Z_3 =
+  \begin{bmatrix}
+    0.37744 & 0.49415 & 0.92895 & 0.39545 & 0.97396 & 0.52441
+  \end{bmatrix} \\
+  \end{align}
+\end{equation}
+
+
+Matriks pembanding $C(\mathbf{z}) = [c_{ij}]_{n \times n}$ dapat didefinisikan sebagai 
+
+\begin{equation}
+  c_{ij} = 
+  \begin{cases}
+    1 & \text{, jika $\ z_i \leq z_j$} \\
+    0 & \text{, jika $\ z_i \gt z_j$}
+  \end{cases}
+\end{equation}
+
+Algoritma ini mampu menentukan matriks pembanding dalam $O(MN\log N)$ komputasi, lebih cepat dibandingkan metode naif yang membutuhkan $\Theta(MN^2)$ 
+
+Berdasarkan contoh sebelumnya,
+
+\begin{equation}
+  C(Z_1) = 
+  \begin{bmatrix}
+    1 & 0 & 1 & 0 & 1 & 0 \\
+    1 & 1 & 1 & 0 & 1 & 1 \\
+    0 & 0 & 1 & 0 & 0 & 0 \\
+    1 & 1 & 1 & 1 & 1 & 1 \\
+    0 & 0 & 1 & 0 & 1 & 0 \\
+    1 & 0 & 1 & 0 & 1 & 1
+  \end{bmatrix} 
+\end{equation}
+
+\begin{equation}
+  C(Z_2) =
+  \begin{bmatrix}
+    1 & 0 & 1 & 0 & 1 & 1 \\
+    1 & 1 & 1 & 0 & 1 & 1 \\
+    0 & 0 & 1 & 0 & 0 & 0 \\
+    1 & 1 & 1 & 1 & 1 & 1 \\
+    0 & 0 & 1 & 0 & 1 & 0 \\
+    0 & 0 & 1 & 0 & 1 & 1
+  \end{bmatrix}
+\end{equation}
+
+\begin{equation}
+  C(Z_3) =
+  \begin{bmatrix}
+    1 & 1 & 1 & 1 & 1 & 1 \\
+    0 & 1 & 1 & 0 & 1 & 1 \\
+    0 & 0 & 1 & 0 & 1 & 0 \\
+    0 & 1 & 1 & 1 & 1 & 1 \\
+    0 & 0 & 0 & 0 & 1 & 0 \\
+    0 & 0 & 1 & 0 & 1 & 1
+  \end{bmatrix}
+\end{equation}
+
+Dengan demikian,
+
+\begin{equation}
+  D = 
+  C(Z_1)+C(Z_2)+C(Z_3)=
+  \begin{bmatrix}
+    3 & 1 & 3 & 1 & 3 & 2 \\
+    2 & 3 & 3 & 0 & 3 & 3 \\
+    0 & 0 & 3 & 0 & 1 & 0 \\
+    2 & 3 & 3 & 3 & 3 & 3 \\
+    0 & 0 & 2 & 0 & 3 & 0 \\
+    1 & 0 & 3 & 0 & 3 & 3
+  \end{bmatrix}
+\end{equation}
+
+
+Dapat ditunjukkan bahwa $d_{ij} = \deg(\mathbf{z}^{(i)},\mathbf{z}^{(j)})$, di mana $d_{ij}$ adalah elemen baris ke-$i$ dan kolom ke-$j$ dari $D$.
+Diberikan matriks dominasi $D$, definisikan $\bar{D}$ sebagai matriks $D$ dengan nilai nol pada diagonal utamanya. Selanjutnya, definisikan $\max(\bar{D}) = [d_1, d_2, \cdots, d_n]$, di mana $d_i$ merupakan nilai maksimum pada kolom ke-$i$ dari $\bar{D}$.
+
+\textit{Front} takterdominasi peringkat pertama, $\mathcal{F}_1$, ditentukan dengan mengidentifikasi semua indeks $i$ yang memenuhi $d_i \leq M$. Jika suatu indeks $i$ memenuhi kondisi tersebut, solusi $\mathbf{z}^{(i)}$ dimasukkan ke dalam $\mathcal{F}_1$. Setelah itu, elemen-elemen pada baris ke-$i$ dan kolom ke-$i$ dalam $\bar{D}$ dihapus, menghasilkan matriks baru, $\bar{D}_1$. 
+
+\textit{Front} takterdominasi peringkat kedua, $\mathcal{F}_2$, diperoleh dengan melakukan prosedur yang serupa terhadap $\bar{D}_1$. Prosedur ini berlanjut secara iteratif hingga semua baris dan kolom dalam matriks tereliminasi.
+
+Berdasarkan contoh sebelumnya, DDANS mengurutkan $\{\mathbf{x}^{(1)},\mathbf{x}^{(2)},\mathbf{x}^{(3)},\mathbf{x}^{(4)},\mathbf{x}^{(5)},\mathbf{x}^{(6)}\}$ menjadi $\left(\{\mathbf{x}^{(1)},\mathbf{x}^{(4)}\},\{\mathbf{x}^{(2)}\},\{\mathbf{x}^{(6)}\},\{\mathbf{x}^{(3)},\mathbf{x}^{(5)}\}\right)$ melalui langkah-langkah pengerjaan berikut:
+
+\begin{equation}
+\begin{array}{c c}
+& \begin{array}{c c c}1 & 2 & 3 & 4 & 5 & 6\end{array}\\
+\bar{D} = &
+\left[
+\begin{array}{c c c c c c}
+0 & 1 & 3 & 1 & 3 & 2 \\
+2 & 0 & 3 & 0 & 3 & 3 \\
+0 & 0 & 0 & 0 & 1 & 0 \\
+2 & 3 & 3 & 0 & 3 & 3 \\
+0 & 0 & 2 & 0 & 0 & 0 \\
+1 & 0 & 3 & 0 & 3 & 0
+\end{array}
+\right]
+\end{array}
+\end{equation}
+
+$\max(\bar{D})=\begin{bmatrix}2,3,3,1,3,3\end{bmatrix}, \mathcal{F}_1=\{\mathbf{z}^{(1)},\mathbf{z}^{(4)}\}$
+
+\begin{equation}
+\begin{array}{c c}
+& \begin{array}{c c c}2 & 3 & 5 & 6\end{array}\\
+\bar{D}_1 = &
+\left[
+\begin{array}{c c c c}
+0 & 3 & 3 & 3 \\
+0 & 0 & 1 & 0 \\
+0 & 2 & 0 & 0 \\
+0 & 3 & 3 & 0
+\end{array}
+\right]
+\end{array}
+\end{equation}
+
+$\max(\bar{D}_1)=\begin{bmatrix}0,3,3,3\end{bmatrix}, \mathcal{F}_2=\{\mathbf{z}^{(2)}\}$
+
+\begin{equation}
+\begin{array}{c c}
+& \begin{array}{c c c}3 & 5 & 6\end{array}\\
+\bar{D}_2 = &
+\left[
+\begin{array}{c c c}
+0 & 1 & 0 \\
+2 & 0 & 0 \\
+3 & 3 & 0
+\end{array}
+\right]
+\end{array}
+\end{equation}
+
+$\max(\bar{D}_2)=\begin{bmatrix}3,3,0\end{bmatrix}, \mathcal{F}_3=\{\mathbf{z}^{(6)}\}$
+
+\begin{equation}
+\begin{array}{c c}
+& \begin{array}{c c}3 & 5\\ \end{array}\\
+\bar{D}_3 = &
+\left[
+\begin{array}{c c}
+0 & 1 \\
+2 & 0 \\
+\end{array}
+\right]
+\end{array}
+\end{equation}
+
+$\max(\bar{D}_3)=\begin{bmatrix}2,1\end{bmatrix}, \mathcal{F}_4=\{\mathbf{z}^{(3)},\mathbf{z}^{(5)}\}$
+Dapat ditunjukkan bahwa $\mathcal{F}_1 \prec \mathcal{F}_2 \prec \mathcal{F}_3 \prec \mathcal{F}_4$

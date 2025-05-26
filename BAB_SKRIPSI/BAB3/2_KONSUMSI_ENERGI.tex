@@ -6,7 +6,7 @@ Pada 2023, server konvensional dan server AI secara kolektif menyumbang sekitar 
 
 Pembahasan sebelumnya menunjukkan manajemen energi di \textit{data center} menjadi isu krusial dalam komputasi awan. Konsumsi energi tidak hanya memengaruhi biaya operasional tetapi juga berdampak pada lingkungan, seperti emisi karbon yang dihasilkan oleh perangkat fisik, terutama server.
 
-CPU merupakan komponen server dengan kontribusi konsumsi energi terbesar di antara komponen lainnya (Vasques, Moura \& de Almeida, 2019). Hal ini melatarbelakangi pengembangan model-model konsumsi energi server berdasarkan tingkat penggunaan CPU (Jin dkk., 2020), salah satunya model yang dikembangkan oleh Beloglazlov, Abawajy, dan Buyya (2012). Menurut model ini, mesin fisik \textit{idle} (menyala tetapi tidak menjalankan \textit{task} apapun) rata-rata mengonsumsi energi sebesar 70\% dari energi yang digunakan oleh mesin fisik dengan utilisasi CPU maksimal. Selain itu, konsumsi energi server memiliki hubungan linier dengan tingkat penggunaan CPU-nya, yang dapat diperkirakan menggunakan persamaan berikut.
+CPU merupakan komponen server dengan kontribusi konsumsi energi terbesar di antara komponen lainnya \citep{VasquesMouraAlmeida2019}. Hal ini melatarbelakangi pengembangan model-model konsumsi energi server berdasarkan tingkat penggunaan CPU \citep{Jin2020}, salah satunya model yang dikembangkan oleh \citet{BeloglazlovAbawajyBuyya2012}. Menurut model ini, mesin fisik \textit{idle} (menyala tetapi tidak menjalankan \textit{task} apapun) rata-rata mengonsumsi energi sebesar 70\% dari energi yang digunakan oleh mesin fisik dengan utilisasi CPU maksimal. Selain itu, konsumsi energi server memiliki hubungan linier dengan tingkat penggunaan CPU-nya, yang dapat diperkirakan menggunakan persamaan berikut.
 \[
 \text{PC}_j=\text{PC}_j^{\max} \cdot U_j^\text{cpu} +\text{PC}_j^\text{idle} \cdot (1- U_j^\text{cpu})
 \]
@@ -14,7 +14,7 @@ Pada persamaan di atas,
 \begin{itemize}
   \item {$\text{PC}_j \in \mathbb{R}$ merupakan konsumsi daya $p_j$.}
   \item {$\text{PC}_j^\text{max} \in \mathbb{R}$ merupakan daya maksimum yang dikonsumsi oleh $p_j$ ketika menggunakan CPU secara penuh.}
-  \item {$\text{PC}_j^\text{idle} \in \mathbb{R}$ merupakan daya yang dikonsumsi oleh $p_j$ ketika \textit{idle}. $\text{PC}_j^\text{idle}$ dapat diberi nilai $0.7\text{PC}_j^\max$ berdasarkan penelitian yang dilakukan oleh Beloglazov, Abawajy, dan Buyya (2012).}
+  \item {$\text{PC}_j^\text{idle} \in \mathbb{R}$ merupakan daya yang dikonsumsi oleh $p_j$ ketika \textit{idle}. $\text{PC}_j^\text{idle}$ dapat diberi nilai $0.7\text{PC}_j^\max$ berdasarkan penelitian yang dilakukan oleh \citet{BeloglazlovAbawajyBuyya2012}.}
   \item {$U_j^\text{cpu} \in [0,1]$ merupakan persentase penggunaan CPU oleh $p_j$.}   
 \end{itemize}
 

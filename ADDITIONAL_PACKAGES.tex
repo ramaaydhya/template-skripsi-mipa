@@ -189,3 +189,34 @@ parsep=0pt
 
 % for \includepdf
 \usepackage{pdfpages}
+
+
+\makeatletter
+\def\bibligand{ dan }
+\makeatother
+
+% \makeatletter
+% \renewcommand{\NAT@etalchar}[1]{\textit{dkk.}}
+% \makeatother
+
+% % --- Start Natbib aggressive internal macro redefinitions ---
+% % THIS IS A HACK. Use if previous methods failed.
+% \makeatletter
+% \def\NAT@etal{dkk.}       % Defines "et al." for natbib's internal use
+% \def\NAT@and{dan}         % Defines "and" for natbib's internal use
+% \def\NAT@lastand{dan}     % Defines the final "and" for natbib's internal use (e.g., "A, B and C")
+
+% % Additional potential redefinitions for specific natbib styles or commands
+% % These are less common but can be tried if the above fails:
+% \def\NAT@sep{ dan } % Use with extreme caution - might replace ALL list separators (commas too!)
+% \def\NAT@last@sep{ dan } % For the final separator (e.g., "A, B dan C")
+
+% % Patching citation commands (requires \usepackage{etoolbox})
+% % This is more targeted and might be needed if simple definitions don't override
+% % Example for \citep: change " et al."
+% \patchcmd{\NAT@citex}{ et al.}{ dkk.}{}{}
+% \patchcmd{\NAT@bibitem@firstnames}{ and }{ dan }{}{} % For first authors in certain contexts
+% \patchcmd{\NAT@bibitem@and}{ and }{ dan }{}{} % Another place "and" might appear
+
+% \makeatother
+% % --- End Natbib aggressive internal macro redefinitions ---

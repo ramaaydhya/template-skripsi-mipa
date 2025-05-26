@@ -2,31 +2,42 @@
 
 Misalkan \textit{front} takterdominasi peringkat $i$ dalam populasi $P$ dilambangkan sebagai $F_i \subseteq P$. \textit{Front} pertama, $F_1$ berisi semua solusi yang tidak didominasi oleh solusi mana pun di $P$. Selanjutnya, \textit{front} $F_2$ berisi semua solusi takterdominasi pada $P \setminus F_1$. Demikian pula dengan \textit{front} $F_3$ yang terdiri dari semua solusi takterdominasi pada $P \setminus (F_1 \cup F_2)$, dan seterusnya. Secara umum, untuk $i > 1$, $F_i$ adalah himpunan solusi takterdominasi dalam $P\setminus(\bigcup_{j=1}^{i-1} F_j)$.  
 
-Sebagai contoh, misalkan $P = \{\mathbf{x}^{(1)},\mathbf{x}^{(2)},\mathbf{x}^{(3)},\mathbf{x}^{(4)},\mathbf{x}^{(5)},\mathbf{x}^{(6)}\}$ adalah populasi dengan enam individu untuk suatu masalah optimasi dengan tiga objektif, di mana $$\begin{align}
-\mathbf{z}^{(1)}=\mathbf{f}(\mathbf{x}^{(1)})=\begin{bmatrix}0.67228 & 0.29762 & 0.37744\end{bmatrix}\\
-\mathbf{z}^{(2)}=\mathbf{f}(\mathbf{x}^{(2)})=\begin{bmatrix}0.48808 & 0.04670 & 0.49415\end{bmatrix}\\
-\mathbf{z}^{(3)}=\mathbf{f}(\mathbf{x}^{(3)})=\begin{bmatrix}0.82550 & 0.99063 & 0.92895\end{bmatrix}\\
-\mathbf{z}^{(4)}=\mathbf{f}(\mathbf{x}^{(4)})=\begin{bmatrix}0.03145 & 0.00683 & 0.39545\end{bmatrix}\\
-\mathbf{z}^{(5)}=\mathbf{f}(\mathbf{x}^{(5)})=\begin{bmatrix}0.80805 & 0.76979 & 0.97396\end{bmatrix}\\
-\mathbf{z}^{(6)}=\mathbf{f}(\mathbf{x}^{(6)})=\begin{bmatrix}0.56562 & 0.74677 & 0.52441\end{bmatrix}\\
-\end{align}$$
+Sebagai contoh, misalkan $P = \{\mathbf{x}^{(1)},\mathbf{x}^{(2)},\mathbf{x}^{(3)},\mathbf{x}^{(4)},\mathbf{x}^{(5)},\mathbf{x}^{(6)}\}$ adalah populasi dengan enam individu untuk suatu masalah optimasi dengan tiga objektif, di mana 
+
+$$
+\begin{align}
+  \mathbf{z}^{(1)}=\mathbf{f}(\mathbf{x}^{(1)})=\begin{bmatrix}0.67228 & 0.29762 & 0.37744\end{bmatrix}\\
+  \mathbf{z}^{(2)}=\mathbf{f}(\mathbf{x}^{(2)})=\begin{bmatrix}0.48808 & 0.04670 & 0.49415\end{bmatrix}\\
+  \mathbf{z}^{(3)}=\mathbf{f}(\mathbf{x}^{(3)})=\begin{bmatrix}0.82550 & 0.99063 & 0.92895\end{bmatrix}\\
+  \mathbf{z}^{(4)}=\mathbf{f}(\mathbf{x}^{(4)})=\begin{bmatrix}0.03145 & 0.00683 & 0.39545\end{bmatrix}\\
+  \mathbf{z}^{(5)}=\mathbf{f}(\mathbf{x}^{(5)})=\begin{bmatrix}0.80805 & 0.76979 & 0.97396\end{bmatrix}\\
+  \mathbf{z}^{(6)}=\mathbf{f}(\mathbf{x}^{(6)})=\begin{bmatrix}0.56562 & 0.74677 & 0.52441\end{bmatrix}\\
+\end{align}
+$$
+
 Berikut adalah relasi dominasi antar individu di $P$:
-1. $\mathbf{z}^{(1)} \prec \mathbf{z}^{(3)}$
-2. $\mathbf{z}^{(1)} \prec \mathbf{z}^{(5)}$
-3. $\mathbf{z}^{(2)} \prec \mathbf{z}^{(3)}$
-4. $\mathbf{z}^{(2)} \prec \mathbf{z}^{(5)}$
-5. $\mathbf{z}^{(2)} \prec \mathbf{z}^{(6)}$
-6. $\mathbf{z}^{(4)} \prec \mathbf{z}^{(2)}$
-7. $\mathbf{z}^{(4)} \prec \mathbf{z}^{(3)}$
-8. $\mathbf{z}^{(4)} \prec \mathbf{z}^{(5)}$
-9. $\mathbf{z}^{(4)} \prec \mathbf{z}^{(6)}$
-10. $\mathbf{z}^{(6)} \prec \mathbf{z}^{(3)}$
-11. $\mathbf{z}^{(6)} \prec \mathbf{z}^{(5)}$
+
+\begin{itemize}
+  \item $ \mathbf{z}^{(3)} \succ \mathbf{z}^{(1)} $
+  \item $ \mathbf{z}^{(5)} \succ \mathbf{z}^{(1)} $
+  \item $ \mathbf{z}^{(3)} \succ \mathbf{z}^{(2)} $
+  \item $ \mathbf{z}^{(5)} \succ \mathbf{z}^{(2)} $
+  \item $ \mathbf{z}^{(6)} \succ \mathbf{z}^{(2)} $
+  \item $ \mathbf{z}^{(2)} \succ \mathbf{z}^{(4)} $
+  \item $ \mathbf{z}^{(3)} \succ \mathbf{z}^{(4)} $
+  \item $ \mathbf{z}^{(5)} \succ \mathbf{z}^{(4)} $
+  \item $ \mathbf{z}^{(6)} \succ \mathbf{z}^{(4)} $
+  \item $ \mathbf{z}^{(3)} \succ \mathbf{z}^{(6)} $
+  \item $ \mathbf{z}^{(5)} \succ \mathbf{z}^{(6)} $
+\end{itemize}
+
 Perhatikan bahwa $\mathbf{x}^{(1)}$ dan $\mathbf{x}^{(4)}$ tidak didominasi oleh individu manapun di $P$. Oleh karena itu, $\mathbf{x}^{(1)}$ dan $\mathbf{x}^{(4)}$ termasuk ke dalam front takterdominasi peringkat pertama. Selain itu, $\mathbf{x}^{(3)}$ dan $\mathbf{x}^{(5)}$ tidak mendominasi individu manapun, sehingga $\mathbf{x}^{(3)}$ dan $\mathbf{x}^{(5)}$ termasuk ke dalam front takterdominasi peringkat terakhir. Dengan demikian,
-1. $F_1 = \{\mathbf{x}^{(1)}, \mathbf{x}^{(4)}\}$
-2. $F_2 = \{\mathbf{x}^{(2)}\}$
-3. $F_3 = \{\mathbf{x}^{(6)}\}$
-4. $F_4 = \{\mathbf{x}^{(3)}, \mathbf{x}^{(5)}\}$
 
+\begin{itemize}  
+  \item $F_1 = \{\mathbf{x}^{(1)}, \mathbf{x}^{(4)}\}$
+  \item $F_2 = \{\mathbf{x}^{(2)}\}$
+  \item $F_3 = \{\mathbf{x}^{(6)}\}$
+  \item $F_4 = \{\mathbf{x}^{(3)}, \mathbf{x}^{(5)}\}$
+\end{itemize}
 
-Berbeda dengan NSGA-II yang menggunakan \textit{crowding distance} untuk mempertahankan keragaman individu dalam populasi (Deb dkk., 2002), NSGA-III mengandalkan sekumpulan titik referensi (\textit{reference points}). Titik-titik referensi ini dapat disesuaikan dengan karakteristik masalah yang diselesaikan. Jika tidak ada informasi mengenai preferensi solusi dari pengambil keputusan, titik-titik ini dapat ditentukan secara sistematis menggunakan metode yang disarankan oleh Das dan Dennis (1998). Titik-titik referensi dikonstruksi sekali di awal eksekusi NSGA-III dan digunakan secara konsisten di setiap generasi sebagai tolok ukur keragaman populasi.
+Berbeda dengan NSGA-II yang menggunakan \textit{crowding distance} untuk mempertahankan keragaman individu dalam populasi \citep{Deb2002}, NSGA-III mengandalkan sekumpulan titik referensi (\textit{reference points}). Titik-titik referensi ini dapat disesuaikan dengan karakteristik masalah yang diselesaikan. Jika tidak ada informasi mengenai preferensi solusi dari pengambil keputusan, titik-titik ini dapat ditentukan secara sistematis menggunakan metode yang disarankan oleh \citet{DasDennis1998}. Titik-titik referensi dikonstruksi sekali di awal eksekusi NSGA-III dan digunakan secara konsisten di setiap generasi sebagai tolok ukur keragaman populasi.
